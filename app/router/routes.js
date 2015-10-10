@@ -8,11 +8,11 @@ FlowRouter.route('/', {
     }
 });
 
-FlowRouter.route('/search', {
-    name: 'search',
+FlowRouter.route('/post', {
+    name: 'post',
     action: function () {
         BlazeLayout.render('layout', {
-            content: 'search'
+            content: 'post'
         });
         GAnalytics.pageview();
     }
@@ -23,6 +23,16 @@ FlowRouter.route('/trade', {
     action: function () {
         BlazeLayout.render('layout', {
             content: 'trade'
+        });
+        GAnalytics.pageview();
+    }
+});
+
+FlowRouter.route('/search', {
+    name: 'search',
+    action: function () {
+        BlazeLayout.render('layout', {
+            content: 'search'
         });
         GAnalytics.pageview();
     }

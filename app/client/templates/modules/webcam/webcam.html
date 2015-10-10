@@ -1,0 +1,7 @@
+<template name="webcam">
+    <div class="webcam module"></div>
+    <button class="ui primary snap button">Take photo</button>
+    {{#if image}}
+        <img src="{{image}}">
+    {{/if}}
+</template>

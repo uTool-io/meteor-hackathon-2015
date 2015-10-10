@@ -1,0 +1,12 @@
+@import '../../_variables';
+
+.webcam.module {
+  width: $full !important;
+  height: auto !important;
+
+  video {
+    width: $full !important;
+    height: auto !important;
+    transform: none !important;
+  }
+}
