@@ -19,6 +19,7 @@ P2P eCommerece/trading web-app
 * Setup build environments (for testing)
 
 ###Views
+
 - Home
 - Product page
 - Search
@@ -27,12 +28,13 @@ P2P eCommerece/trading web-app
 - Checkout
 
 ###Modules
-- Bottom Navigation
+####Bottom Navigation
 	- Home (/home)
 	- Search (/search)
 	- Post (/post) 
 	- Profile (/my-profile)
-- Profile Navigation
+	
+####/Profile Navigation
 	- Notifications
 		- Item request
 		- Trade request
@@ -40,16 +42,35 @@ P2P eCommerece/trading web-app
 		- Username
 		- Password
 		- Email
-- Item
+		
+####Item
+Attributes:
+
 	- Thumbnail
 	- Title
 	- Subtitle
 	- Long description
 	- Short description (140 characters truncated from long description)
-- Trades
-	- Desired item
-	- Suggested items
-- Shopping cart
+
+####Trades
+Attributes:
+
+	- Item
+	- Offering
+
+####Offering
+Attributes:
+
+	- Owner
+	- Item {}
+
+####Filtering
+
+####Shopping cart
+
+####Stripe
+
+####Desires
 
 ## How to use
 
@@ -153,7 +174,8 @@ environments/       # Environments folder
 * Analytics
   * [datariot:ganalytics](https://github.com/datariot/meteor-ganalytics)
 * UI and UX
-  * [materialize:materialize](https://github.com/Dogfalo/materialize)
+  * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css)
+  * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
 * Development
   * [flemay:less-autoprefixer](https://github.com/flemay/less-autoprefixer)
 * Testing
