@@ -120,7 +120,7 @@ environments/       # Environments folder
 * Analytics
   * [datariot:ganalytics](https://github.com/datariot/meteor-ganalytics)
 * UI and UX
-  * [materialize:materialize](https://github.com/Dogfalo/materialize)
+  * [semantic:ui-css](https://github.com/Semantic-Org/Semantic-UI-CSS)
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
 * Development
   * [fourseven:scss ](https://github.com/fourseven/meteor-scss)
