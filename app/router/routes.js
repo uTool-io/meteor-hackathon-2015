@@ -40,7 +40,6 @@ FlowRouter.route('/search', {
 
 FlowRouter.route('/profile', {
     name: 'profile',
-    triggersEnter: [AccountsTemplates.ensureSignedIn],
     action: function () {
         BlazeLayout.render('layout', {
             content: 'profile'
@@ -57,3 +56,5 @@ FlowRouter.notFound = {
         GAnalytics.pageview();
     }
 };
+
+FlowRouter.triggers.enter([AccountsTemplates.ensureSignedIn]);
