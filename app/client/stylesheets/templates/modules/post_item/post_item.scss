@@ -1,0 +1,12 @@
+@import '../../../_variables';
+
+.post-item {
+
+  .item-owner {
+    padding-top: $space-large;
+  }
+  .item-title {
+    text-align: center;
+    margin-top: 0;
+  }
+}
