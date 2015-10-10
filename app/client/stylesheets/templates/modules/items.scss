@@ -1,0 +1,16 @@
+@import '../../_variables';
+
+.items.module {
+
+  .item {
+    text-align: center;
+
+    .ui.card {
+
+      .title {
+        text-align: center;
+        margin-top: 0;
+      }
+    }
+  }
+}

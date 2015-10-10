@@ -1,52 +1,61 @@
 Meteor.startup(function () {
     if (Meteor.users.find().count() === 0) {
-        var userLily = Accounts.createUser({
-            'username': 'lily',
-            'password': 'lily123',
+        var userHusam = Accounts.createUser({
+            'username': 'husam',
+            'password': 'husam1',
             'profile': {
-                'name': 'Lily Ebele',
-                'email': 'lily@quicktrade.com'
+                'name': 'Husam Machlovi',
+                'email': 'hmachlovi@gmail.com'
             }
         });
-        var userOskar = Accounts.createUser({
-            'username': 'oskar',
-            'password': 'oskar123',
+        var userDamir = Accounts.createUser({
+            'username': 'damir',
+            'password': 'damir1',
             'profile': {
-                'name': 'Oskar Sarika',
-                'email': 'oskar@quicktrade.com'
+                'name': 'Damir Vazgird',
+                'email': 'dvazgird@gmail.com'
             }
         });
     };
 
     var now = new Date(),
-        lily = Meteor.users.findOne(userLily),
-        oskar = Meteor.users.findOne(userOskar);
+        husam = Meteor.users.findOne(userHusam),
+        damir = Meteor.users.findOne(userDamir);
 
-    if (Posts.find().count() === 0) {
+    if (Items.find().count() === 0) {
 
-        Posts.insert({
-            title: 'Les Paul',
-            image: '/images/posts/lily/lespaul.jpg',
-            userId: lily._id,
-            username: lily.username,
+        Items.insert({
+            title: 'Les Paul Custom',
+            image: '/images/items/husam/lespaul.jpg',
+            userId: husam._id,
+            username: husam.username,
             submitted: now,
             likes: 0
         });
 
-        Posts.insert({
+        Items.insert({
             title: 'Old Guitar',
-            image: '/images/posts/lily/lespaul.jpg',
-            userId: lily._id,
-            username: lily.username,
+            image: '/images/items/husam/lespaul.jpg',
+            userId: husam._id,
+            username: husam.username,
             submitted: now,
             likes: 0
         });
 
-        Posts.insert({
+        Items.insert({
             title: 'New Guitar',
-            image: '/images/posts/lily/lespaul.jpg',
-            userId: oskar._id,
-            username: oskar.username,
+            image: '/images/items/husam/lespaul.jpg',
+            userId: damir._id,
+            username: damir.username,
+            submitted: now,
+            likes: 0
+        });
+
+        Items.insert({
+            title: 'Broken Guitar',
+            image: '/images/items/husam/lespaul.jpg',
+            userId: damir._id,
+            username: damir.username,
             submitted: now,
             likes: 0
         });

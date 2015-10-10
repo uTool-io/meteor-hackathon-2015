@@ -1,6 +1,6 @@
-Posts = new Mongo.Collection('posts');
+Items = new Mongo.Collection('items');
 
-Posts.helpers({
+Items.helpers({
     getUser: function () {
         return Meteor.users.findOne({_id: this.userId});
     }
