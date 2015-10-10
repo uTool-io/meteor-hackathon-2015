@@ -25,4 +25,4 @@ meteorhacks:fast-render
 spiderable
 tomwasd:flow-router-seo
 datariot:ganalytics
-materialize:materialize
+materialize:materialize@=0.97.0
