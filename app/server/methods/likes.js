@@ -3,12 +3,15 @@ Meteor.methods({
         check(itemId, String);
         check(userId, String);
 
+        var created = new Date();
+
         if (itemId === null) {
             throw new Meteor.Error('item-must-exist', 'Item does not exist in Items Collection.');
         } else {
             Likes.insert({
                 itemId: itemId,
-                userId: userId
+                userId: userId,
+                created: created
             });
         }
     },

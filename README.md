@@ -131,7 +131,8 @@ environments/       # Environments folder
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
   * [benjick:webcam](https://github.com/benjick/meteor-webcam)
 * Development
-  * [fourseven:scss ](https://github.com/fourseven/meteor-scss)
+  * [fourseven:scss](https://github.com/fourseven/meteor-scss)
+  * [msavin:mongol](https://github.com/msavin/Mongol)
 
 ## License
 
