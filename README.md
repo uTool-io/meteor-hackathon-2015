@@ -18,6 +18,8 @@ P2P eCommerece/trading web-app
 
 * Setup build environments (for testing)
 
+<<<<<<< HEAD
+=======
 ###Views
 
 - Home
@@ -80,6 +82,7 @@ Attributes:
 
 ####Stripe
 
+>>>>>>> 19d7113779e14401189d52d924fe789c0ef1e160
 ## How to use
 
 ### Requirements
@@ -185,7 +188,7 @@ environments/       # Environments folder
   * [materialize:materialize](https://github.com/Dogfalo/materialize)
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
 * Development
-  * [fourseven:scss](https://github.com/fourseven/meteor-scss)
+  * [flemay:less-autoprefixer](https://github.com/flemay/less-autoprefixer)
 * Testing
   * [sanjo:jasmine](https://github.com/xolvio/meteor-jasmine)
   * [velocity:html-reporter](https://github.com/meteor-velocity/html-reporter/)
