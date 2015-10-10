@@ -21,11 +21,14 @@ P2P eCommerece/trading web-app
 ###Views
 
 - Home
+	- Feed
 - Product page
 - Search
+	- Contacts
+	- Popular
+	- Query
 - Profile
-- Cart
-- Checkout
+- Trade
 
 ###Modules
 ####Bottom Navigation
@@ -43,7 +46,7 @@ P2P eCommerece/trading web-app
 		- Password
 		- Email
 		
-####Item
+####Offering
 Attributes:
 
 	- Thumbnail
@@ -52,25 +55,30 @@ Attributes:
 	- Long description
 	- Short description (140 characters truncated from long description)
 
-####Trades
+####Trade
 Attributes:
 
-	- Item
-	- Offering
-
-####Offering
-Attributes:
-
-	- Owner
-	- Item {}
+	- Offerings
+		- Offering
+			- ownerId
+			- offeringId
+		- Offering
+			- ownerId
+			- offeringId
+	- Agreement
+		- User
+			- ownerId
+			- Agree
+		- User
+			- ownerId
+			- Agree
+			
 
 ####Filtering
 
 ####Shopping cart
 
 ####Stripe
-
-####Desires
 
 ## How to use
 
