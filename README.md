@@ -122,6 +122,7 @@ environments/       # Environments folder
 * UI and UX
   * [semantic:ui-css](https://github.com/Semantic-Org/Semantic-UI-CSS)
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
+  * [benjick:webcam](https://github.com/benjick/meteor-webcam)
 * Development
   * [fourseven:scss ](https://github.com/fourseven/meteor-scss)
 
