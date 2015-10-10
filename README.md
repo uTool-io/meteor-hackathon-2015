@@ -18,6 +18,71 @@ P2P eCommerece/trading web-app
 
 * Setup build environments (for testing)
 
+<<<<<<< HEAD
+=======
+###Views
+
+- Home
+	- Feed
+- Product page
+- Search
+	- Contacts
+	- Popular
+	- Query
+- Profile
+- Trade
+
+###Modules
+####Bottom Navigation
+	- Home (/home)
+	- Search (/search)
+	- Post (/post) 
+	- Profile (/my-profile)
+	
+####/Profile Navigation
+	- Notifications
+		- Item request
+		- Trade request
+	- User settings
+		- Username
+		- Password
+		- Email
+		
+####Offering
+Attributes:
+
+	- Thumbnail
+	- Title
+	- Subtitle
+	- Long description
+	- Short description (140 characters truncated from long description)
+
+####Trade
+Attributes:
+
+	- Offerings
+		- Offering
+			- ownerId
+			- offeringId
+		- Offering
+			- ownerId
+			- offeringId
+	- Agreement
+		- User
+			- ownerId
+			- Agree
+		- User
+			- ownerId
+			- Agree
+			
+
+####Filtering
+
+####Shopping cart
+
+####Stripe
+
+>>>>>>> 19d7113779e14401189d52d924fe789c0ef1e160
 ## How to use
 
 ### Requirements
