@@ -120,8 +120,7 @@ environments/       # Environments folder
 * Analytics
   * [datariot:ganalytics](https://github.com/datariot/meteor-ganalytics)
 * UI and UX
-  * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css)
-  * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
+  * [materialize:materialize](https://github.com/Dogfalo/materialize)
 * Development
   * [flemay:less-autoprefixer](https://github.com/flemay/less-autoprefixer)
 * Testing
