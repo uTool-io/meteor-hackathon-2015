@@ -110,6 +110,9 @@ environments/       # Environments folder
   * [tracker](https://github.com/meteor/meteor/tree/devel/packages/tracker)
   * [check](https://github.com/meteor/meteor/tree/devel/packages/check)
   * [fastclick](http://github.com/meteor/meteor/tree/devel/packages/fastclick)
+* Accounts
+  * [accounts-password](https://github.com/meteor/meteor/tree/devel/packages/accounts-password)
+  * [useraccounts:semantic-ui](https://github.com/meteor-useraccounts/semantic-ui)
 * Routing
   * [kadira:flow-router](https://github.com/kadirahq/flow-router)
   * [kadira:blaze-layout](https://github.com/kadirahq/blaze-layout)
