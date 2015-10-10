@@ -1,8 +1,8 @@
 # Meteor Hackathon 2015
 
-Meteor Hackathon repository - project details to come.
+P2P eCommerece/trading web-app
 
-[VIEW LIVE DEMO](http://utool.meteor.com)
+[VIEW LIVE DEMO](http://p2ptrading.meteor.com)
 
 * [Roadmap](#roadmap)
 * [How to use](#how-to-use)
