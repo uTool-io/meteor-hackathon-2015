@@ -25,7 +25,7 @@ Meteor.startup(function () {
 
         Posts.insert({
             title: 'Les Paul',
-            thumbnail: '/images/posts/lily/lespaul.jpg',
+            image: '/images/posts/lily/lespaul.jpg',
             userId: lily._id,
             username: lily.username,
             submitted: now,
@@ -34,7 +34,7 @@ Meteor.startup(function () {
 
         Posts.insert({
             title: 'Old Guitar',
-            thumbnail: '/images/posts/lily/lespaul.jpg',
+            image: '/images/posts/lily/lespaul.jpg',
             userId: lily._id,
             username: lily.username,
             submitted: now,
@@ -42,8 +42,8 @@ Meteor.startup(function () {
         });
 
         Posts.insert({
-            title: 'AMP',
-            thumbnail: '/images/posts/oskar/amp.jpg',
+            title: 'New Guitar',
+            image: '/images/posts/lily/lespaul.jpg',
             userId: oskar._id,
             username: oskar.username,
             submitted: now,
