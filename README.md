@@ -182,7 +182,7 @@ environments/       # Environments folder
 * Analytics
   * [datariot:ganalytics](https://github.com/datariot/meteor-ganalytics)
 * UI and UX
-  * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css)
+  * [materialize:materialize](https://github.com/Dogfalo/materialize)
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
 * Development
   * [fourseven:scss](https://github.com/fourseven/meteor-scss)
