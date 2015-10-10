@@ -18,60 +18,6 @@ P2P eCommerece/trading web-app
 
 * Setup build environments (for testing)
 
-###Views
-
-- Home
-- Product page
-- Search
-- Profile
-- Cart
-- Checkout
-
-###Modules
-####Bottom Navigation
-	- Home (/home)
-	- Search (/search)
-	- Post (/post) 
-	- Profile (/my-profile)
-	
-####/Profile Navigation
-	- Notifications
-		- Item request
-		- Trade request
-	- User settings
-		- Username
-		- Password
-		- Email
-		
-####Item
-Attributes:
-
-	- Thumbnail
-	- Title
-	- Subtitle
-	- Long description
-	- Short description (140 characters truncated from long description)
-
-####Trades
-Attributes:
-
-	- Item
-	- Offering
-
-####Offering
-Attributes:
-
-	- Owner
-	- Item {}
-
-####Filtering
-
-####Shopping cart
-
-####Stripe
-
-####Desires
-
 ## How to use
 
 ### Requirements
@@ -177,7 +123,7 @@ environments/       # Environments folder
   * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css)
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
 * Development
-  * [fourseven:scss](https://github.com/fourseven/meteor-scss)
+  * [flemay:less-autoprefixer](https://github.com/flemay/less-autoprefixer)
 * Testing
   * [sanjo:jasmine](https://github.com/xolvio/meteor-jasmine)
   * [velocity:html-reporter](https://github.com/meteor-velocity/html-reporter/)
