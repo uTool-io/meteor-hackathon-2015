@@ -1,12 +1,13 @@
 @import '../../../_variables';
 
 .post-item {
+  text-align: center;
 
-  .item-owner {
-    padding-top: $space-large;
+  .ui.card {
+      .post-title {
+        text-align: center;
+        margin-top: 0;
+      }
   }
-  .item-title {
-    text-align: center;
-    margin-top: 0;
-  }
+
 }

@@ -1,8 +1,15 @@
 <template name="postItem">
   <div class="post-item">
-    <p class="item-owner">Rachel's trading...</p>
-    <h2 class="ui header item-title">Les Paul</h2>
-    <img class="ui fluid image item-thumb" src="/images/lespaul.jpg" />
-    <button class="ui button like">Like</button>
+    <div class="ui card">
+      <a class="image" href="#">
+        <img class="post-thumb" src="/images/lespaul.jpg">
+      </a>
+      <div class="content">
+        <a class="header post-title" href="#">Les Paul</a>
+      </div>
+      <div class="meta">
+        <a>Offered by Rachel</a>
+      </div>
+    </div>
   </div>
 </template>
