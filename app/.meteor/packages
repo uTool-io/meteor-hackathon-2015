@@ -18,7 +18,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 check
 fastclick
-flemay:less-autoprefixer
 kadira:flow-router
 kadira:blaze-layout
 meteorhacks:fast-render
@@ -26,3 +25,4 @@ spiderable
 tomwasd:flow-router-seo
 datariot:ganalytics
 materialize:materialize@=0.97.0
+fourseven:scss

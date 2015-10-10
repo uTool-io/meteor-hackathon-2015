@@ -177,7 +177,7 @@ environments/       # Environments folder
   * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css)
   * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
 * Development
-  * [flemay:less-autoprefixer](https://github.com/flemay/less-autoprefixer)
+  * [fourseven:scss](https://github.com/fourseven/meteor-scss)
 * Testing
   * [sanjo:jasmine](https://github.com/xolvio/meteor-jasmine)
   * [velocity:html-reporter](https://github.com/meteor-velocity/html-reporter/)
