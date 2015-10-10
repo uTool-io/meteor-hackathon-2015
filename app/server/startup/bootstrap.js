@@ -16,12 +16,13 @@ Meteor.startup(function () {
                 'email': 'oskar@quicktrade.com'
             }
         });
-    }
+    };
+
+    var now = new Date(),
+        lily = Meteor.users.findOne(userLily),
+        oskar = Meteor.users.findOne(userOskar);
 
     if (Posts.find().count() === 0) {
-        var now = new Date(),
-            lily = Meteor.users.findOne(userLily),
-            oskar = Meteor.users.findOne(userOskar);
 
         Posts.insert({
             title: 'Les Paul',
@@ -49,5 +50,5 @@ Meteor.startup(function () {
             submitted: now,
             likes: 0
         });
-    }
+    };
 });

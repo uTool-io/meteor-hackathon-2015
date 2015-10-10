@@ -114,6 +114,9 @@ environments/       # Environments folder
   * [accounts-password](https://github.com/meteor/meteor/tree/devel/packages/accounts-password)
   * [useraccounts:semantic-ui](https://github.com/meteor-useraccounts/semantic-ui)
   * [useraccounts:flow-routing](https://github.com/meteor-useraccounts/flow-routing)
+* Collections
+  * [dburles:collection-helpers](https://github.com/dburles/meteor-collection-helpers/)
+  * [reywood:publish-composite](https://github.com/englue/meteor-publish-composite)
 * Routing
   * [kadira:flow-router](https://github.com/kadirahq/flow-router)
   * [kadira:blaze-layout](https://github.com/kadirahq/blaze-layout)
