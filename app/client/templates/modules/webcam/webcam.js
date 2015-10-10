@@ -1,6 +1,5 @@
-Template.webcam.onRendered(function() {
-
-    Webcam.on( 'error', function(error) {
+Template.webcam.onRendered(function () {
+    Webcam.on('error', function (error) {
         console.error(error);
     });
 
@@ -12,12 +11,16 @@ Template.webcam.onRendered(function() {
         image_format: 'jpeg',
         jpeg_quality: 90
     });
-    Webcam.attach('.webcam.module');
+
+    Tracker.autorun(function () {
+        console.log('autorun');
+        Webcam.attach('.webcam.module');
+    });
 });
 
 Template.webcam.events({
     'click .snap.button': function () {
-        Webcam.snap( function(image) {
+        Webcam.snap(function (image) {
             Session.set('webcamSnap', image);
         })
     }
