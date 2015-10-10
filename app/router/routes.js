@@ -8,10 +8,41 @@ FlowRouter.route('/', {
     }
 });
 
+FlowRouter.route('/search', {
+    name: 'search',
+    action: function () {
+        BlazeLayout.render('layout', {
+            content: 'search'
+        });
+        GAnalytics.pageview();
+    }
+});
+
+FlowRouter.route('/trade', {
+    name: 'trade',
+    action: function () {
+        BlazeLayout.render('layout', {
+            content: 'trade'
+        });
+        GAnalytics.pageview();
+    }
+});
+
+FlowRouter.route('/profile', {
+    name: 'profile',
+    action: function () {
+        BlazeLayout.render('layout', {
+            content: 'profile'
+        });
+        GAnalytics.pageview();
+    }
+});
+
 FlowRouter.notFound = {
     action: function() {
         BlazeLayout.render('layout', {
             content: 'redirect'
         });
+        GAnalytics.pageview();
     }
 };

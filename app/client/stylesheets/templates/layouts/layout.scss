@@ -1,0 +1,24 @@
+@import '../../_variables';
+
+html {
+
+  body {
+
+    .layout {
+
+      .header {
+
+      }
+
+      .main {
+
+      }
+      
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: $full;
+      }
+    }
+  }
+}
