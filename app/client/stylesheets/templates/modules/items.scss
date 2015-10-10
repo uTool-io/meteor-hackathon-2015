@@ -1,13 +1,17 @@
 @import '../../_variables';
 
 .items.module {
+  postion: relative;
 
   .item.column {
-    margin-top: 0;
-    margin-bottom: $space-large;
+    margin: 0;
 
     .ui.card {
       text-align: center;
+
+      .image {
+        cursor: pointer;
+      }
     }
   }
 }
