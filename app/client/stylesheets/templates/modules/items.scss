@@ -2,15 +2,12 @@
 
 .items.module {
 
-  .item {
-    text-align: center;
+  .item.column {
+    margin-top: 0;
+    margin-bottom: $space-large;
 
     .ui.card {
-
-      .title {
-        text-align: center;
-        margin-top: 0;
-      }
+      text-align: center;
     }
   }
 }
