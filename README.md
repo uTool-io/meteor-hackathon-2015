@@ -1,8 +1,8 @@
 # Meteor Hackathon 2015
 
-P2P eCommerece/trading web-app
+A P2P eCommerece/trading web-app
 
-[VIEW LIVE DEMO](http://p2ptrading.meteor.com)
+[VIEW LIVE DEMO](http://quicktrade.meteor.com)
 
 * [Roadmap](#roadmap)
 * [How to use](#how-to-use)

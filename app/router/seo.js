@@ -1,8 +1,8 @@
 SEO = new FlowRouterSEO();
 
 SEO.setDefaults({
-    title: 'P2P Trading | Geolocation Trading',
-    description: 'Description here',
+    title: 'QuickTrade | Snappy Trading',
+    description: 'A P2P eCommerece/trading web-app',
     meta: {
         'property="og:type"': 'webApp',
         'property="og:site_name"': 'p2ptrading.meteor.com',
