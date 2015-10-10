@@ -27,7 +27,12 @@ Meteor.startup(function() {
            thumbnail: '',
            userId: user1._id,
            author: user1.username,
-           submitted: now
+           submitted: now,
+           upvoters: [
+             {
+               userId: ''
+             }
+           ]
+           });
+         }
        });
-   }
-});
