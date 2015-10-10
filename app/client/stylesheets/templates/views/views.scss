@@ -1,0 +1,27 @@
+@import '../../_variables';
+
+// views styles
+
+.view.frame {
+  position: relative;
+  background: $light;
+  z-index: 1;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 $sixteenth;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 $eighth;
+  }
+
+  @media (min-width: $huge-desktop-width) {
+    padding: 0 $eighth + $sixteenth;
+  }
+
+}
+
+.view {
+  margin: 0;
+  padding: $space-small + $space-tiny;
+}
