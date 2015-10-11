@@ -10,23 +10,23 @@ Template.offers.helpers({
     offers: function () {
         var allOffers = [],
             offers = Offers.find({}, {sort: {offeredAt: -1}}),
-            userId = Meteor.user()._id;
+            userId = Meteor.user()._id; // @TODO: show offeredItems by userId
 
         offers.forEach(function (offer) {
             var selectedItem = Items.findOne({_id: offer.selectedItemId}),
                 offeredItem = Items.findOne({_id: offer.offeredItemId});
 
+            offer.selectedItemTitle = selectedItem.title;
+            offer.selectedItemImage = selectedItem.image;
             offer.selectedItemOwnerId = selectedItem.ownerId;
             offer.selectedItemOwnerName = selectedItem.ownerName;
-            //@TODO: insert event for offeredItemOwnerId into offers collection using createOffer method
-            offer.offeredItem = offeredItem;
-            //offer.offeredItemOwnerId = offeredItem.ownerId;
-            //offer.offeredItemOwnerName = offeredItem.ownerName;
+            offer.offeredItemTitle = offeredItem.title;
+            offer.offeredItemImage = offeredItem.image;
+            offer.offeredItemOwnerId = offeredItem.ownerId;
+            offer.offeredItemOwnerName = offeredItem.ownerName;
 
             allOffers.push(offer);
         });
-
-        console.log(allOffers);
 
         return allOffers;
     }

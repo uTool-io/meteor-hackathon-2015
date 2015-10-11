@@ -11,6 +11,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/post', {
     name: 'post',
     action: function () {
+        Webcam.reset();
         BlazeLayout.render('layout', {
             content: 'post'
         });
@@ -21,7 +22,6 @@ FlowRouter.route('/post', {
 FlowRouter.route('/trades', {
     name: 'trades',
     action: function () {
-        Webcam.reset();
         BlazeLayout.render('layout', {
             content: 'trades'
         });
@@ -29,11 +29,10 @@ FlowRouter.route('/trades', {
     }
 });
 
-/*TODO: Add dynamic URL*/
+// @TODO: Add dynamic URL
 FlowRouter.route('/trades/trade', {
     name: 'trade',
     action: function () {
-        Webcam.reset();
         BlazeLayout.render('layout', {
             content: 'trade'
         });

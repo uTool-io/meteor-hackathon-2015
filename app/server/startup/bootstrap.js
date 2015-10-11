@@ -68,7 +68,7 @@ Meteor.startup(function () {
           selectedItemOwnerId: '',
           selectedItemOwnerName: 'Damir',
           offeredItemId: '/images/items/husam/lespaul.jpg',
-          offerredBy: husam._id,
+          offeredBy: husam._id,
           ownerName: 'Husam',
           offeredAt: now,
           openTrade: true,
