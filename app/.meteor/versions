@@ -95,5 +95,4 @@ useraccounts:flow-routing@1.12.4
 useraccounts:semantic-ui@1.12.4
 webapp@1.2.2
 webapp-hashing@1.0.5
-zimme:active-route@2.0.4_1
-zimme:iron-router-active@2.0.1
+zimme:active-route@2.3.2

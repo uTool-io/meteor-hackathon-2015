@@ -31,5 +31,5 @@ accounts-password
 useraccounts:semantic-ui
 useraccounts:flow-routing
 msavin:mongol
-zimme:iron-router-active
 natestrauser:animate-css
+zimme:active-route

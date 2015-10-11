@@ -118,6 +118,7 @@ environments/       # Environments folder
   * [kadira:flow-router](https://github.com/kadirahq/flow-router)
   * [kadira:blaze-layout](https://github.com/kadirahq/blaze-layout)
   * [meteorhacks:fast-render](https://github.com/meteorhacks/fast-render)
+  * [zimme:active-route](https://github.com/zimme/meteor-active-route)
 * SEO
   * [spiderable](https://github.com/meteor/meteor/tree/devel/packages/spiderable)
   * [tomwasd:flow-router-seo](https://github.com/tomwasd/flow-router-seo)
@@ -125,7 +126,7 @@ environments/       # Environments folder
   * [datariot:ganalytics](https://github.com/datariot/meteor-ganalytics)
 * UI and UX
   * [semantic:ui-css](https://github.com/Semantic-Org/Semantic-UI-CSS)
-  * [fortawesome:fontawesome](https://github.com/MeteorPackaging/Font-Awesome)
+  * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css/)
   * [benjick:webcam](https://github.com/benjick/meteor-webcam)
 * Development
   * [fourseven:scss](https://github.com/fourseven/meteor-scss)
