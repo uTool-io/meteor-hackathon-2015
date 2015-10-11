@@ -18,15 +18,11 @@ Template.offers.helpers({
 
             offer.selectedItemOwnerId = selectedItem.ownerId;
             offer.selectedItemOwnerName = selectedItem.ownerName;
-            //@TODO: insert event for offeredItemOwnerId into offers collection using createOffer method
-            offer.offeredItem = offeredItem;
-            //offer.offeredItemOwnerId = offeredItem.ownerId;
-            //offer.offeredItemOwnerName = offeredItem.ownerName;
+            offer.offeredItemOwnerId = offeredItem.ownerId;
+            offer.offeredItemOwnerName = offeredItem.ownerName;
 
             allOffers.push(offer);
         });
-
-        console.log(allOffers);
 
         return allOffers;
     }
