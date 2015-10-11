@@ -1,4 +1,6 @@
 Template.webcam.onRendered(function () {
+    //FlowRouter.triggers.exit([Webcam.reset()]);
+
     Webcam.on('error', function (error) {
         console.error(error);
     });
@@ -12,10 +14,7 @@ Template.webcam.onRendered(function () {
         jpeg_quality: 90
     });
 
-    Tracker.autorun(function () {
-        console.log('autorun');
-        Webcam.attach('.webcam.module');
-    });
+    Webcam.attach('.webcam.module');
 });
 
 Template.webcam.events({
