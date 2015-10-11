@@ -12,7 +12,7 @@ Meteor.methods({
             Offers.insert({
                 selectedItemId: selectedItemId,
                 offeredItemId: offeredItemId,
-                offerredBy: user._id,
+                offeredBy: user._id,
                 offeredAt: now,
                 openTrade: false,
                 cancelOffer: {}

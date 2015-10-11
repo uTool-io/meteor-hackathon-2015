@@ -66,7 +66,7 @@ Meteor.startup(function () {
       Offers.insert({
           selectedItemId: '/images/items/damir/bass.jpg',
           offeredItemId: '/images/items/husam/lespaul.jpg',
-          offerredBy: husam._id,
+          offeredBy: husam._id,
           offeredAt: now,
           openTrade: true,
           cancelOffer: {}
