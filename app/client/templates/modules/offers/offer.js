@@ -16,8 +16,6 @@ Template.offer.events({
                 console.error('cancelOffer method failed: ' + error.reason);
             } else {
                 console.log('Cancelled offer ' + offerId);
-                // @TODO: instead of remove filter out offers if cancerOffer true
-                $(offer).remove();
             }
         });
     },

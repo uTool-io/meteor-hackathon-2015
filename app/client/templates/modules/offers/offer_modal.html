@@ -1,25 +1,27 @@
 <template name="offerModal">
     <aside class="offer modal module animated fadeIn" id="{{_id}}">
-      <h2 class="ui top attached centered header">
-        Start A Trade
-      </h2>
-      <div class="ui item user-offering">
-        <h3 class="ui dividing header">
-            Your offerings
-            <small>Which items would you like to barter?</small>
-        </h3>
-        <div class="ui tiny images">
-            {{> userItems}}
+        <h2 class="ui top attached centered header">
+            Start A Trade
+        </h2>
+
+        <div class="ui item user-offering">
+            <h3 class="ui dividing header">
+                Your offerings
+                <small>Which items would you like to barter?</small>
+            </h3>
+            <div class="ui tiny images">
+                {{> userItems}}
+            </div>
         </div>
-      </div>
-      <div class="ui item offering">
-        <h3 class="ui dividing header header">
-            {{ownerName}}'s offerings
-        </h3>
-        <div class="ui tiny images">
-            <img src="{{image}}" />
+        <div class="ui item offering">
+            <h3 class="ui dividing header header">
+                {{ownerName}}'s offerings
+            </h3>
+
+            <div class="ui tiny images">
+                <img src="{{image}}"/>
+            </div>
         </div>
-      </div>
         <div class="actions">
             <div class="ui two fluid buttons">
                 <button class="ui red basic button" id="cancelOffer">
