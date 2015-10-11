@@ -30,6 +30,10 @@
     &.user-offering {
       border-bottom: $space-atomic solid $gray;
       background: $light;
+
+      img {
+        box-shadow: $space-atomic $space-atomic $space-atomic $gray;
+      }
     }
 
     &.offering {
