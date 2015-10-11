@@ -3,10 +3,18 @@ Meteor.methods({
         check(itemId, String);
         check(buyerId, String);
 
-        var now = new Date();
+        var now = new Date(),
+            user = Meteor.user(),
+            existingItem = Likes.findOne({itemId: itemId});
 
-        if (itemId === null) {
-            throw new Meteor.Error('item-must-exist', 'Item does not exist in Items Collection.');
+        if (!user) {
+            throw new Meteor.Error('user-not-logged-in', 'You need to login to like an item.');
+        }
+        //if (itemId === existingItemId) {
+        //    throw new Meteor.Error('item-already-liked', 'You already liked this item.');
+        //}
+        if (itemId === undefined) {
+            throw new Meteor.Error('item-id-undefined', 'Item does not exist in Items Collection.');
         } else {
             Likes.insert({
                 itemId: itemId,
