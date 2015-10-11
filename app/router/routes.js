@@ -18,7 +18,19 @@ FlowRouter.route('/post', {
     }
 });
 
-FlowRouter.route('/trade', {
+FlowRouter.route('/trades', {
+    name: 'trades',
+    action: function () {
+        Webcam.reset();
+        BlazeLayout.render('layout', {
+            content: 'trades'
+        });
+        GAnalytics.pageview();
+    }
+});
+
+/*TODO: Add dynamic URL*/
+FlowRouter.route('/trades/trade', {
     name: 'trade',
     action: function () {
         Webcam.reset();
