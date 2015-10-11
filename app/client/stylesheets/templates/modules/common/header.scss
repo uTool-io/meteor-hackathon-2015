@@ -1,5 +1,12 @@
 @import '../../../_variables';
 
-.header.module {
+.topnav {
+  width: 100%;
   padding: $space-tiny;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: $light;
+  border-bottom: $space-atomic solid $gray-lighter;
+  box-shadow: $space-atomic $space-atomic $space-atomic $gray-light;
 }
