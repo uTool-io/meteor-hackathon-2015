@@ -1,0 +1,11 @@
+@import '_variables';
+
+html {
+  body {
+    color: $gray-dark;
+
+    a {
+      color: $primary-color;
+    }
+  }
+}
