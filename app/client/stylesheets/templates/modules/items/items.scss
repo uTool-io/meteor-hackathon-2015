@@ -14,9 +14,13 @@
       }
 
       .content {
+        padding: $space-small;
 
         button {
-          background: none;
+          background: $primary-color;
+          color: $light;
+          font-size: $font-size-base + $font-size-tiny;
+          box-shadow :$space-atomic $space-atomic 0 darken($primary-color, 20%);
         }
       }
     }
