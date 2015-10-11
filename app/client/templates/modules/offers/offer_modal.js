@@ -25,7 +25,6 @@ Template.offerModal.events({
             if (error) {
                 console.error('createOffer method failed: ' + error.reason);
             } else {
-                console.log('Offered item ' + offeredItemId + 'for selected item ' + selectedItemId);
                 Session.set('offerModal', false);
             }
         });
