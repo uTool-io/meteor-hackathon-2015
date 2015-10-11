@@ -13,8 +13,6 @@ Template.offers.helpers({
             offers = Offers.find({offeredBy: userId, openTrade: false, cancelOffer: 'undefined', $or: [ {openTrade: false}, {cancelOffer: objectType} ]}, {sort: {offeredAt: -1}}),
             allOffers = [];
 
-        console.log(offers.fetch());
-
         offers.forEach(function (offer) {
             var selectedItem = Items.findOne({_id: offer.selectedItemId}),
                 offeredItem = Items.findOne({_id: offer.offeredItemId});
