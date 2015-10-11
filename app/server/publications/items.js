@@ -1,8 +1,12 @@
-Meteor.publish('items', function(){
+Meteor.publish('items', function () {
     return Items.find();
 });
 
-Meteor.publish('item', function(id) {
-    check(id, String);
-    return Items.find({_id: id});
+Meteor.publish('userItems', function (ownerId) {
+    return Items.find({ownerId: ownerId});
+});
+
+Meteor.publish('item', function (itemId) {
+    check(itemId, String);
+    return Items.find({_id: itemId});
 });

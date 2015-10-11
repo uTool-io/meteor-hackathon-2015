@@ -27,8 +27,8 @@ Meteor.startup(function () {
         Items.insert({
             title: 'Les Paul Custom',
             image: '/images/items/husam/lespaul.jpg',
-            sellerId: husam._id,
-            sellerName: husam.profile.name,
+            ownerId: husam._id,
+            ownerName: husam.profile.name,
             submitted: now,
             likes: 0
         });
@@ -36,8 +36,8 @@ Meteor.startup(function () {
         Items.insert({
             title: 'Old Guitar',
             image: '/images/items/husam/lespaul.jpg',
-            sellerId: husam._id,
-            sellerName: husam.profile.name,
+            ownerId: husam._id,
+            ownerName: husam.profile.name,
             submitted: now,
             likes: 0
         });
@@ -45,8 +45,8 @@ Meteor.startup(function () {
         Items.insert({
             title: 'New Guitar',
             image: '/images/items/husam/lespaul.jpg',
-            sellerId: damir._id,
-            sellerName: damir.profile.name,
+            ownerId: damir._id,
+            ownerName: damir.profile.name,
             submitted: now,
             likes: 0
         });
@@ -54,8 +54,8 @@ Meteor.startup(function () {
         Items.insert({
             title: 'Broken Guitar',
             image: '/images/items/husam/lespaul.jpg',
-            sellerId: damir._id,
-            sellerName: damir.profile.name,
+            ownerId: damir._id,
+            ownerName: damir.profile.name,
             submitted: now,
             likes: 0
         });
