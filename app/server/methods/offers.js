@@ -12,8 +12,10 @@ Meteor.methods({
             Offers.insert({
                 selectedItemId: selectedItemId,
                 offeredItemId: offeredItemId,
+                offerredBy: user._id,
                 offeredAt: now,
-                tradeItems: false
+                openTrade: false,
+                cancelOffer: {}
             });
         }
     },
@@ -23,15 +25,22 @@ Meteor.methods({
         var offer = Offers.findOne(offerId);
 
         if (offer) {
-            Offers.update(offerId, {$set: {tradeItems: true}});
-            // insert to trades collection
+            Offers.update(offerId, {$set: {openTrade: true}});
+            //@TODO: insert offerId into trades collection
         } else {
-            throw new Meteor.Error('offer-does-not-exist', 'This offer no longer exists.');
+            throw new Meteor.Error('undefined-offer-id', 'The offerId ' + offerId + ' cannot be found in the Offers collection.');
         }
     },
-    cancelOffer: function (offerId) {
+    cancelOffer: function (offerId, cancelAttributes) {
         check(offerId, String);
 
-        Offers.remove(offerId);
+        var offer = Offers.findOne(offerId);
+
+        if (offer) {
+            Offers.update(offerId, {$set: {cancelOffer: cancelAttributes}});
+            //@TODO: if offerId === tradeId => remove from trades collection
+        } else {
+            throw new Meteor.Error('undefined-offer-id', 'The offerId ' + offerId + ' cannot be found in the Offers collection.');
+        }
     }
 });
