@@ -1,8 +1,7 @@
 Template.item.events({
     'click #toggleCard': function (event) {
         event.preventDefault();
-        Session.set('cardToggled', this._id);
-        console.log(this._id);
+        $('.ui.basic.modal').modal('show')
     },
     'click #likeItem': function (event) {
         //@TODO: Create a likeItem button in item template
