@@ -1,15 +1,41 @@
 <template name="item">
     <div class="item column">
         <div class="ui fluid card" id="{{_id}}">
+          <div class="content">
+              <h2 class="title">{{title}}</h2>
+              <div class="meta">
+                  <p class="owner">Offered by <a class="name" href="/profile">{{sellerName}}</a></p>
+              </div>
+          </div>
             <div class="image">
                 <img src="{{image}}" />
             </div>
-
             <div class="content">
-                <h2 class="title">{{title}}</h2>
-                <div class="meta">
-                    <p class="owner">Offered by <a class="name" href="/profile">{{sellerName}}</a></p>
+                <div class="">
+                  <button class="fluid ui button">Make An Offer</button>
                 </div>
+            </div>
+        </div>
+        <div class="ui card">
+          <div class="content">
+              <h2>What're you offering for {{title}}?</h2>
+          </div>
+          <div class="content">
+            <h4>Select your items</h4>
+            <div class="ui tiny images">
+              <img class="ui image" src="/images/wireframe/image.png">
+              <img class="ui image" src="/images/wireframe/image.png">
+              <img class="ui image" src="/images/wireframe/image.png">
+              <img class="ui image" src="/images/wireframe/image.png">
+            </div>
+          </div>
+          <div class="content">
+            <span class="right floated"></span>
+              <div class="ui buttons">
+                <button class="ui button">Cancel</button>
+                <div class="or"></div>
+                <button class="ui positive button" id="offer-submit">Submit Offer</button>
+              </div>
             </div>
         </div>
     </div>
