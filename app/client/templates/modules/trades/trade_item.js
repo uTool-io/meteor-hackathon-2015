@@ -14,9 +14,10 @@ Template.tradeItem.helpers({
 });
 
 Template.tradeItem.events({
-  'click #confirm-trade': function(event) {
+  'click #complete-trade': function(event) {
     event.preventDefault();
-    console.log('this worked');
-
+    Trades.update({}, {set: {completedTrade: 'true'}})
+    var tradeStatus = $('#close-trade').attr('id')
+    console.log(tradeStatus)
   }
-})
+});

@@ -71,7 +71,7 @@ Meteor.startup(function () {
           offeredBy: husam._id,
           ownerName: 'Husam',
           offeredAt: now,
-          confirmTrade: '',
+          completedTrade: 'false',
           cancelOffer: {}
       });
     };
