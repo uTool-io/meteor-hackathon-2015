@@ -1,8 +1,9 @@
 <template name="like">
-    <div class="like item">
+    <div class="liked item" id="{{_id}}">
         <img class="ui avatar image" src="{{image}}">
         <div class="content">
-            <a class="header">{{title}}</a>
+            <h4 class="title">{{title}}</h4>
+            <p class="owner">Posted by <a class="name" href="/profile">{{ownerName}}</a></p>
         </div>
     </div>
 </template>

@@ -1,14 +1,14 @@
 <template name="item">
     <div class="item column">
-        <div class="ui fluid card">
+        <div class="ui fluid card" id="{{_id}}">
             <div class="image">
                 <img src="{{image}}" />
             </div>
 
             <div class="content">
-                <h2 class="header title" href="#">{{title}}</h2>
+                <h2 class="title" href="#">{{title}}</h2>
                 <div class="meta">
-                    <p class="user">Offered by <a href="/profile">{{getUser.profile.name}}</a></p>
+                    <p class="owner">Offered by <a class="name" href="/profile">{{ownerName}}</a></p>
                 </div>
             </div>
         </div>

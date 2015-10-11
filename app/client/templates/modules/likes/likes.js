@@ -14,8 +14,10 @@ Template.likes.helpers({
         likedItems.forEach(function (likedItem) {
             var item = Items.findOne({_id: likedItem.itemId});
 
+            likedItem.id = item._id;
             likedItem.title = item.title;
             likedItem.image = item.image;
+            likedItem.ownerName = item.ownerName;
 
             likes.push(likedItem);
         });
