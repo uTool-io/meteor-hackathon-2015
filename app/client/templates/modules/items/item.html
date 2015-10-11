@@ -1,6 +1,6 @@
 <template name="item">
     <div class="item column">
-<<<<<<< HEAD
+        <!--front of card-->
         <div class="ui fluid card front" id="{{_id}}">
           <div class="content">
               <h2 class="title">{{title}}</h2>
@@ -8,65 +8,31 @@
                   <p class="owner">Offered by <a class="name" href="/profile">{{ownerName}}</a></p>
               </div>
           </div>
-=======
-        <div class="ui fluid card" id="{{_id}}">
-            <div class="content">
-                <h2 class="title">{{title}}</h2>
-
-                <div class="meta">
-                    <p class="owner">Offered by <a class="name" href="/profile">{{ownerName}}</a></p>
-                </div>
-            </div>
->>>>>>> 2e95d2f6436b2b291263a3ffea4582c9eeefe44e
             <div class="image">
                 <img src="{{image}}"/>
             </div>
             <div class="content">
-<<<<<<< HEAD
-                <button class="fluid ui button" id="toggle">Make An Offer</button>
+                <button class="fluid ui button" id="toggleCard">Make An Offer</button>
             </div>
         </div>
-      <!-- {{#if cardToggle}} -->
+      <!-- back of card-->
         <div class="ui card back hide">
           <div class="content">
-              <h2>What're you offering for?</h2>
+              <h2>What're you offering for? {{title}}</h2>
           </div>
           <div class="content">
             <h4>Select your items</h4>
-            <div class="ui tiny images">
-              <img class="ui image" src="/images/wireframe/image.png">
-              <img class="ui image" src="/images/wireframe/image.png">
-              <img class="ui image" src="/images/wireframe/image.png">
-              <img class="ui image" src="/images/wireframe/image.png">
-=======
-                <button class="ui fluid button" id="toggleCard">Make An Offer</button>
-            </div>
+          </div>
+          <div class="content">
+               {{> userItems}}
+          </div>
+          <div class="content">
+            <div class="ui buttons">
+             <button class="ui button">Cancel</button>
+             <div class="or"></div>
+             <button class="ui positive button" id="createOffer">Submit Offer</button>
+           </div>
+          </div>
         </div>
-        <div class="ui fluid card">
-            <div class="content">
-                <h2>What're you offering for {{title}}?</h2>
->>>>>>> 2e95d2f6436b2b291263a3ffea4582c9eeefe44e
-            </div>
-            <div class="content">
-                <h4>Select your items</h4>
-                {{> userItems}}
-            </div>
-            <div class="content">
-                <div class="ui buttons">
-                    <button class="ui button">Cancel</button>
-                    <div class="or"></div>
-                    <button class="ui positive button" id="createOffer">Submit Offer</button>
-                </div>
-            </div>
-        </div>
-<<<<<<< HEAD
-        {{#each userItems}}
-            <p>{{title}}</p>
-            <p>{{ownerName}}</p>
-            <img src="{{image}}" />
-        {{/each}}
-        <!-- {{/if}} -->
-=======
->>>>>>> 2e95d2f6436b2b291263a3ffea4582c9eeefe44e
     </div>
 </template>
