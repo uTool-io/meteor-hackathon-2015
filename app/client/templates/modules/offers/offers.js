@@ -8,9 +8,11 @@ Template.offers.onCreated(function () {
 
 Template.offers.helpers({
     offers: function () {
-        var allOffers = [],
-            offers = Offers.find({}, {sort: {offeredAt: -1}}),
-            userId = Meteor.user()._id; // @TODO: show offeredItems by userId
+        var userId = Meteor.user()._id,
+            offers = Offers.find({offeredBy: userId, $or: [{openTrade: {$not: true}}, {cancelOffer: {$not: typeof 'object'}}]}, {sort: {offeredAt: -1}}),
+            allOffers = [];
+
+        console.log(offers);
 
         offers.forEach(function (offer) {
             var selectedItem = Items.findOne({_id: offer.selectedItemId}),
