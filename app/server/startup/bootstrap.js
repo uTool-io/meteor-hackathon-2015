@@ -61,9 +61,9 @@ Meteor.startup(function () {
         });
     };
 
-    if (Offers.find().count() === 0) {
+    if (Trades.find().count() === 0) {
 
-      Offers.insert({
+      Trades.insert({
           selectedItemId: '/images/items/damir/bass.jpg',
           selectedItemOwnerId: '',
           selectedItemOwnerName: 'Damir',

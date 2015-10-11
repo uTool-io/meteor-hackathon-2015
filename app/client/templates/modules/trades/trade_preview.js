@@ -3,5 +3,6 @@ Template.tradePreview.onCreated(function () {
     self.autorun(function () {
         self.subscribe('items');
         self.subscribe('offers');
+        self.subscribe('trades');
     });
 });

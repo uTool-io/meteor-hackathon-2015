@@ -3,11 +3,12 @@ Template.tradeItem.onCreated(function () {
     self.autorun(function () {
         self.subscribe('items');
         self.subscribe('offers');
+        self.subscribe('trades');
     });
 });
 
 Template.tradeItem.helpers({
-    offers: function () {
-      return Offers.find();
+    trades: function () {
+      return Trades.find();
     }
 });
