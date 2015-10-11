@@ -1,10 +1,8 @@
 <template name="trade">
-  <div>
-    <h1>{{> tradeItem}}</h1>
-    <div class="ui buttons">
-      <button class="ui button">Cancel</button>
-      <div class="or"></div>
-      <button class="ui positive button">Save</button>
+  <div class="trade view">
+    {{> tradeItem}}
+    <div class="secondary link">
+      <a href="/trades">Back to trades</a>
     </div>
   </div>
 </template>
