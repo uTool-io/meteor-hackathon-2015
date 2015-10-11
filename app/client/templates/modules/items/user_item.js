@@ -1,5 +1,5 @@
 Template.userItem.events({
-    'click .user.item.image': function (event) {
+    'click .ui.user.image': function (event) {
         event.preventDefault();
 
         var item = document.getElementById(this._id);

@@ -4,10 +4,14 @@ Meteor.methods({
         check(offeredItemId, String);
 
         var now = new Date(),
+            duplicateOffer = Offers.findOne({selectedItemId: selectedItemId, offeredItemId: offeredItemId}),
             user = Meteor.user();
 
         if (!user) {
             throw new Meteor.Error('user-not-logged-in', 'You need to login to make an offer.');
+        }
+        if (duplicateOffer) {
+            throw new Meteor.Error('this-offer-already-exists', 'This offer was already made.');
         } else {
             Offers.insert({
                 selectedItemId: selectedItemId,
