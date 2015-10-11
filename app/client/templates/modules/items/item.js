@@ -24,10 +24,3 @@ Template.item.events({
         //});
     }
 });
-
-Template.item.helpers({
-    userItems: function () {
-        var userId = Meteor.user()._id;
-        return Items.find({ownerId: userId}, {sort: {submitted: -1}});
-    }
-});
