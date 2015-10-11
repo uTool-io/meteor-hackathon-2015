@@ -22,12 +22,26 @@ Template.item.events({
         //        // show confirmation of like
         //    }
         //});
+    },
+    'click #toggle': function(e) {
+      e.preventDefault();
+      Session.set('cardToggle', this._id);
+      store the card
+      have a variable
+      showClass =
+      console.log(cardToggle);
     }
 });
+
+
+
 
 Template.item.helpers({
     userItems: function () {
         var userId = Meteor.user()._id;
         return Items.find({ownerId: userId}, {sort: {submitted: -1}});
+    },
+    hideCard: function() {
+      return "hide";
     }
 });

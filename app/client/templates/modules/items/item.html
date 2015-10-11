@@ -1,6 +1,6 @@
 <template name="item">
     <div class="item column">
-        <div class="ui fluid card" id="{{_id}}">
+        <div class="ui fluid card front" id="{{_id}}">
           <div class="content">
               <h2 class="title">{{title}}</h2>
               <div class="meta">
@@ -11,12 +11,13 @@
                 <img src="{{image}}" />
             </div>
             <div class="content">
-                <button class="fluid ui button" id="like">Make An Offer</button>
+                <button class="fluid ui button" id="toggle">Make An Offer</button>
             </div>
         </div>
-        <div class="ui card">
+      <!-- {{#if cardToggle}} -->
+        <div class="ui card back hide">
           <div class="content">
-              <h2>What're you offering for {{title}}?</h2>
+              <h2>What're you offering for?</h2>
           </div>
           <div class="content">
             <h4>Select your items</h4>
@@ -41,5 +42,6 @@
             <p>{{ownerName}}</p>
             <img src="{{image}}" />
         {{/each}}
+        <!-- {{/if}} -->
     </div>
 </template>
