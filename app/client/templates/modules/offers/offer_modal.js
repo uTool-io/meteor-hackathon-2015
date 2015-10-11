@@ -17,8 +17,9 @@ Template.offerModal.events({
     'click #createOffer': function (event) {
         event.preventDefault();
 
-        var offeredItemId = $('.offered.user.item.image').attr('id'),
+        var offeredItemId = $('.offered.user.image').attr('id'),
             selectedItemId = this._id;
+
 
         Meteor.call('createOffer', selectedItemId, offeredItemId, function (error) {
             if (error) {
