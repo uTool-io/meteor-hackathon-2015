@@ -7,6 +7,7 @@ Template.likes.onCreated(function () {
 });
 
 Template.likes.helpers({
+    //@TODO: Refactor to new likeItem Method variables
     likes: function () {
         var likes = [],
             likedItems = Likes.find({}, {sort: {liked: -1}}),

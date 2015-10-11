@@ -1,28 +1,5 @@
 <template name="item">
     <div class="item column">
-
-        <!--
-        <div class="ui active card back">
-          <div class="content">
-              <h2>What're you offering for? {{title}}</h2>
-          </div>
-          <div class="content">
-            <h4>Select your items</h4>
-          </div>
-          <div class="content">
-               {{> userItems}}
-          </div>
-          <div class="content">
-            <div class="ui buttons">
-             <button class="ui button">Cancel</button>
-             <div class="or"></div>
-             <button class="ui positive button" id="createOffer">Submit Offer</button>
-           </div>
-           <div class="content">
-           </div>
-          </div>
-        </div> -->
-
         <div class="ui fluid card front" id="{{_id}}">
             <div class="content">
                 <h2 class="title">{{title}}</h2>
@@ -38,10 +15,8 @@
                 <button class="fluid ui button" id="toggleOfferModal">Make An Offer</button>
             </div>
         </div>
-
         {{#if offerModalToggled}}
-            {{> offer}}
+            {{> offerModal}}
         {{/if}}
-
     </div>
 </template>
