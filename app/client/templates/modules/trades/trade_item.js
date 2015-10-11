@@ -12,3 +12,11 @@ Template.tradeItem.helpers({
       return Trades.find();
     }
 });
+
+Template.tradeItem.events({
+  'click #confirm-trade': function(event) {
+    event.preventDefault();
+    console.log('this worked');
+
+  }
+})
