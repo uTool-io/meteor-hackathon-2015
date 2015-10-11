@@ -1,16 +1,7 @@
 <template name="offers">
     <div class="offers module">
         {{#each offers}}
-            <p>{{offeredItemOwnerName}} offers:</p>
-
-            <h2>{{offeredItemTitle}}</h2>
-            <img src="{{offeredItemImage}}"/>
-
-            <p>FOR {{selectedItemOwnerName}}'s:</p>
-
-            <h2>{{selectedItemTitle}}</h2>
-            <img src="{{selectedItemImage}}"/>
-            <hr>
+            {{> offer}}
         {{/each}}
     </div>
 </template>
