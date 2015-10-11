@@ -1,7 +1,7 @@
 Meteor.methods({
-    likeItem: function (itemId, userId) {
+    likeItem: function (itemId, buyerId) {
         check(itemId, String);
-        check(userId, String);
+        check(buyerId, String);
 
         var now = new Date();
 
@@ -10,12 +10,12 @@ Meteor.methods({
         } else {
             Likes.insert({
                 itemId: itemId,
-                userId: userId,
+                buyerId: buyerId,
                 liked: now
             });
         }
     },
-    dislikeItem: function (itemId) {
+    unlikeItem: function (itemId) {
         check(itemId, String);
 
         Items.remove(itemId);
