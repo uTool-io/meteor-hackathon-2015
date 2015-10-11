@@ -61,6 +61,7 @@ mobile-status-bar@1.0.6
 mongo@1.1.2
 mongo-id@1.0.1
 msavin:mongol@1.4.3
+natestrauser:animate-css@3.4.0
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
@@ -95,3 +96,5 @@ useraccounts:flow-routing@1.12.4
 useraccounts:semantic-ui@1.12.4
 webapp@1.2.2
 webapp-hashing@1.0.5
+zimme:active-route@2.0.4_1
+zimme:iron-router-active@2.0.1
