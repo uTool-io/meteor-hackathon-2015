@@ -1,21 +1,7 @@
 <template name="offers">
     <div class="offers module">
         {{#each offers}}
-            <div class="ui stackable two column vertical offer grid segment" id="{{_id}}">
-                <div class="offered item column" id="{{offeredItemId}}">
-                    <h2 class="title">{{offeredItemOwnerName}}'s offering {{offeredItemTitle}}</h2>
-                    <img class="ui image" src="{{selectedItemImage}}"/>
-                </div>
-                <div class="selected item column" id="{{selectedItemId}}">
-                    <h2 class="title">For {{selectedItemOwnerName}}'s {{selectedItemTitle}}</h2>
-                    <img class="ui image" src="{{selectedItemImage}}"/>
-                </div>
-                <div class="ui buttons">
-                    <button class="ui button" id="#cancelOffer">Cancel</button>
-                    <div class="or"></div>
-                    <button class="ui positive button" id="#acceptOffer">Accept Offer</button>
-                </div>
-            </div>
+            {{> offer}}
         {{/each}}
     </div>
 </template>

@@ -24,9 +24,12 @@ Meteor.methods({
 
         var offer = Offers.findOne(offerId);
 
-        if (offer) {
+        if (offer && !offer.cancelOffer) {
             Offers.update(offerId, {$set: {openTrade: true}});
             //@TODO: insert offerId into trades collection
+        }
+        if (offer.cancelOffer) {
+            throw new Meteor.Error('offer-cancelled', 'The offerId ' + offerId + ' was cancelled.');
         } else {
             throw new Meteor.Error('undefined-offer-id', 'The offerId ' + offerId + ' cannot be found in the Offers collection.');
         }
@@ -37,7 +40,7 @@ Meteor.methods({
         var offer = Offers.findOne(offerId);
 
         if (offer) {
-            Offers.update(offerId, {$set: {cancelOffer: cancelAttributes}});
+            Offers.update(offerId, {$set: {cancelOffer: cancelAttributes, openTrade: false}});
             //@TODO: if offerId === tradeId => remove from trades collection
         } else {
             throw new Meteor.Error('undefined-offer-id', 'The offerId ' + offerId + ' cannot be found in the Offers collection.');

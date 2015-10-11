@@ -1,0 +1,17 @@
+<template name="offer">
+    <div class="ui stackable two column vertical offer grid segment" id="{{_id}}">
+        <div class="offered item column" id="{{offeredItemId}}">
+            <h2 class="title">{{offeredItemOwnerName}}'s offering {{offeredItemTitle}}</h2>
+            <img class="ui image" src="{{selectedItemImage}}"/>
+        </div>
+        <div class="selected item column" id="{{selectedItemId}}">
+            <h2 class="title">For {{selectedItemOwnerName}}'s {{selectedItemTitle}}</h2>
+            <img class="ui image" src="{{selectedItemImage}}"/>
+        </div>
+        <div class="ui buttons">
+            <button class="ui cancel offer button">Cancel</button>
+            <div class="or"></div>
+            <button class="ui positive accept offer button">Accept Offer</button>
+        </div>
+    </div>
+</template>
