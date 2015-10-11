@@ -1,7 +1,7 @@
 Meteor.methods({
-    likeItem: function (itemId, buyerId) {
-        check(itemId, String);
-        check(buyerId, String);
+    likeItem: function (likedItemId, likedBy) {
+        check(likedItemId, String);
+        check(likedBy, String);
 
         var now = new Date(),
             user = Meteor.user(),
@@ -17,9 +17,9 @@ Meteor.methods({
             throw new Meteor.Error('item-id-undefined', 'Item does not exist in Items Collection.');
         } else {
             Likes.insert({
-                itemId: itemId,
-                buyerId: buyerId,
-                liked: now
+                likedItemId: likedItemId,
+                likedBy: likedBy,
+                likedAt: now
             });
         }
     },
