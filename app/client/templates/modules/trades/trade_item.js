@@ -5,3 +5,9 @@ Template.tradeItem.onCreated(function () {
         self.subscribe('offers');
     });
 });
+
+Template.tradeItem.helpers({
+    offers: function () {
+      return Offers.find();
+    }
+});
