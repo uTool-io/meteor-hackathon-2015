@@ -1,0 +1,10 @@
+Scenario: Buyer watches items
+  Given I'm logged in
+  And I like an item on '/'
+  When I visit /profile
+  Then I should see my watched items in a list
+
+Scenario: Seller is notified one of his items is liked
+  Given I log-in to the app
+  When I visit '/myprofile'
+  Then I should see a list of my items that have been liked
