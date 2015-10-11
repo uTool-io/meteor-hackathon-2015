@@ -19,8 +19,8 @@ Template.likes.helpers({
             likedItem.title = item.title;
             likedItem.image = item.image;
             likedItem.buyerId = buyerId;
-            likedItem.sellerId = item.sellerId;
-            likedItem.sellerName = item.sellerName;
+            likedItem.ownerId = item.ownerId;
+            likedItem.ownerName = item.ownerName;
 
             likes.push(likedItem);
         });
