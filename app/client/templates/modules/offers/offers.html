@@ -1,0 +1,9 @@
+<template name="offers">
+    <div class="offers module">
+        {{#each offers}}
+            <p>Selected Owner: {{selectedItemOwnerName}} {{selectedItemOwnerId}}</p>
+            <p>Offered Owner: {{offeredItemOwnerName}} {{offeredItemOwnerId}}</p>
+            <hr>
+        {{/each}}
+    </div>
+</template>
