@@ -14,4 +14,12 @@
       }
     }
   }
+
+  &.user {
+
+    .user.item.image {
+      margin: 0;
+      padding: $space-tiny;
+    }
+  }
 }
