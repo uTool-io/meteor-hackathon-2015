@@ -9,6 +9,9 @@
     .ui.card {
       text-align: center;
 
+      &.back {
+      }
+
       .image {
         cursor: pointer;
       }
