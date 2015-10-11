@@ -1,35 +1,38 @@
 <template name="tradeItem">
-  {{#each trades}}
-  <div class="ui items">
-    <div class="ui item user-offering">
-          <h2 class="ui top attached header">{{ownerName}}'s offerings</h2>
-        <div class="item">
-          <div class="ui image small">
-            <img src="{{offeredItemId}}">
-          </div>
-          <div class="extra content">
-            <div class="ui input">
-              <input name="confirm-offering" id="trade-confirm" type="radio" vale="1"><label for="">Ready to trade</label>
+    {{#each trades}}
+        <div class="ui items">
+            <div class="ui item user-offering">
+                <h2 class="ui top attached header">{{ownerName}}'s offerings</h2>
+
+                <div class="item">
+                    <div class="ui image small">
+                        <img src="{{offeredItemId}}">
+                    </div>
+                    <div class="extra content">
+                        <div class="ui input">
+                            <input name="confirm-offering" id="trade-confirm" type="radio" vale="1"><label for="">Ready
+                            to trade</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-      </div>
-    </div>
 
-    <div class="ui item offering">
-        <h2 class="ui top attached header">{{selectedItemOwnerName}}'s offering</h2>
-      <div class="item">
-        <div class="ui image small">
-          <img src="/images/items/damir/bass.jpg">
+            <div class="ui item offering">
+                <h2 class="ui top attached header">{{selectedItemOwnerName}}'s offering</h2>
+
+                <div class="item">
+                    <div class="ui image small">
+                        <img src="/images/items/damir/bass.jpg">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
 
-  <div class="ui buttons">
-    <button class="ui button" name="cancel-trade">Cancel</button>
-    <div class="or"></div>
-    <button class="ui positive button" id="confirm-trade">Submit</button>
-  </div>
+        <div class="ui buttons">
+            <button class="ui button" name="cancel-trade">Cancel</button>
+            <div class="or"></div>
+            <button class="ui positive button" id="confirm-trade">Submit</button>
+        </div>
     {{/each}}
 </template>
