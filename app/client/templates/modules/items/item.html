@@ -3,40 +3,42 @@
 
         {{#if cardToggled}}
 
-        <div class="ui card back {{show}}">
-          <div class="content">
-              <h2>What're you offering for? {{title}}</h2>
-          </div>
-          <div class="content">
-            <h4>Select your items</h4>
-          </div>
-          <div class="content">
-               {{> userItems}}
-          </div>
-          <div class="content">
-            <div class="ui buttons">
-             <button class="ui button">Cancel</button>
-             <div class="or"></div>
-             <button class="ui positive button" id="createOffer">Submit Offer</button>
-           </div>
-          </div>
-        </div>
+            <div class="ui fluid card back">
+                <div class="content">
+                    <h2 class="title">What're you offering for {{title}}?</h2>
+                </div>
+                <div class="content">
+                    <h4>Select your items:</h4>
+                </div>
+                <div class="content">
+                    {{> userItems}}
+                </div>
+                <div class="content">
+                    <div class="ui buttons">
+                        <button class="ui button">Cancel</button>
+                        <div class="or"></div>
+                        <button class="ui positive button" id="createOffer">Submit Offer</button>
+                    </div>
+                </div>
+            </div>
 
         {{else}}
-        <div class="ui fluid card front" id="{{_id}}">
-            <div class="content">
-              <h2 class="title">{{title}}</h2>
-            <div class="meta">
-              <p class="owner">Offered by <a class="name" href="/profile">{{ownerName}}</a></p>
+
+            <div class="ui fluid card front" id="{{_id}}">
+                <div class="content">
+                    <h2 class="title">{{title}}</h2>
+
+                    <div class="meta">
+                        <p class="owner">Offered by <a class="name" href="/profile">{{ownerName}}</a></p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="{{image}}"/>
+                </div>
+                <div class="content">
+                    <button class="fluid ui button" id="toggleCard">Make An Offer</button>
+                </div>
             </div>
-            </div>
-              <div class="image">
-                <img src="{{image}}"/>
-              </div>
-              <div class="content">
-                <button class="fluid ui button" id="toggleCard">Make An Offer</button>
-              </div>
-          </div>
 
         {{/if}}
     </div>
