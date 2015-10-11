@@ -25,12 +25,11 @@ spiderable
 tomwasd:flow-router-seo
 datariot:ganalytics
 fourseven:scss
-fortawesome:fontawesome
 semantic:ui-css
 benjick:webcam
 accounts-password
 useraccounts:semantic-ui
 useraccounts:flow-routing
 msavin:mongol
-zimme:iron-router-active
 natestrauser:animate-css
+zimme:active-route
