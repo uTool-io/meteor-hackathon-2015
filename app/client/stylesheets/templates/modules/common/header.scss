@@ -1,24 +1,34 @@
 @import '../../../_variables';
 
-.topnav.ui.menu {
-  width: 100%;
-  padding: $space-tiny;
+.header.module {
   position: fixed;
   top: 0;
   z-index: 2;
-  background-color: $primary-color;
+  width: 100%;
 
-  .item {
-    padding: 0 $space-base;
-    font-size: $font-size-base;
-    font-size: .5rem;
+  .topnav {
 
-    .logo {
-      margin: auto;
-      border: $space-atomic solid $light;
+      padding: $space-tiny;
+      background-color: $primary-color;
+      position: relative;
       text-align: center;
-    }
-  }
+      padding: $space-base;
+      color: $light;
 
+      .logo {
+        border: $space-atomic solid $light;
+        margin-left: $space-base;
+        display: inline-block !important;
+        position: absolute;
+        top: $space-atomic;
+        left: 0;
+        width: $space-huge;
+      }
 
-}
+          .view-title {
+            display: inline;
+            font-size: $font-size-base;
+            font-size: 1rem;
+          }
+        }
+      }
