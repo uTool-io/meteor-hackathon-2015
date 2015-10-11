@@ -1,0 +1,56 @@
+@import '../../../_variables';
+
+.offer.modal {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background: $light;
+  height: 100%;
+  width: 100%;
+  padding: $space-base 0;
+
+  .item {
+    padding: $space-large $space-base;
+
+    small {
+      display: block;
+      color: $gray;
+    }
+
+    &.user-offering {
+      border: $space-atomic solid $gray-lighter;
+      background: $light;
+    }
+
+    &.offering {
+      border: $space-atomic solid $gray-lighter;
+      background: $gray-lighter;
+    }
+  }
+
+  .actions {
+    text-align: right;
+    background: lighten($gray-light, 35%);
+    padding: $space-large $space-base $space-base $space-base;
+
+    .ui.two.fluid.buttons {
+      .button {
+        width: auto;
+
+        &.red {
+          background: $negative-color !important;
+          color: $light !important;
+          border: $space-atomic solid $negative-color;
+        }
+
+        &.green.button {
+          background: $primary-color !important;
+          color: $light !important;
+          border: $space-atomic solid $primary-color;
+        }
+      }
+
+      }
+    }
+}

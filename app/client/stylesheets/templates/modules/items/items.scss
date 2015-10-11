@@ -1,4 +1,4 @@
-@import '../../_variables';
+@import '../../../_variables';
 
 .items.module {
   postion: relative;
@@ -6,14 +6,18 @@
   .item.column {
     margin: 0;
 
-    .ui.card {
+    .ui.fluid.card {
       text-align: center;
-
-      &.back {
-      }
 
       .image {
         cursor: pointer;
+      }
+
+      .content {
+
+        button {
+          background: none;
+        }
       }
     }
   }

@@ -1,11 +1,22 @@
 <template name="offerModal">
     <aside class="offer modal module" id="{{_id}}">
-        <h2 class="header">
-            What is your offer for {{ownerName}}'s {{title}}?
-        </h2>
-        <div class="image content">
+      <div class="ui item user-offering">
+        <h3 class="ui dividing header">
+            Your offerings
+            <small>Which items would you like to barter?</small>
+        </h3>
+        <div class="ui tiny images">
             {{> userItems}}
         </div>
+      </div>
+      <div class="ui item offering">
+        <h3 class="ui dividing header header">
+            {{ownerName}}'s offerings
+        </h3>
+        <div class="ui tiny images">
+            <img src="{{image}}" />
+        </div>
+      </div>
         <div class="actions">
             <div class="ui two fluid buttons">
                 <button class="ui red basic button" id="cancelOffer">
