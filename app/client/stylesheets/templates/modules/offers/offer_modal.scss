@@ -8,10 +8,19 @@
   background: $light;
   height: 100%;
   width: 100%;
-  padding: $space-base 0;
+  padding: $space-base $space-base;
+  border: 1px solid $gray-light;
+
+  .ui.attached.header {
+    border: none;
+  }
+
+  .ui.dividing.header {
+    border-bottom: none;
+  }
 
   .item {
-    padding: $space-large $space-base;
+    padding: $space-base + $space-small $space-base;
 
     small {
       display: block;
@@ -19,20 +28,21 @@
     }
 
     &.user-offering {
-      border: $space-atomic solid $gray-lighter;
+      border-bottom: $space-atomic solid $gray;
       background: $light;
+
+      img {
+        box-shadow: $space-atomic $space-atomic $space-atomic $gray;
+      }
     }
 
     &.offering {
-      border: $space-atomic solid $gray-lighter;
-      background: $gray-lighter;
     }
   }
 
   .actions {
     text-align: right;
     background: lighten($gray-light, 35%);
-    padding: $space-large $space-base $space-base $space-base;
 
     .ui.two.fluid.buttons {
       .button {
