@@ -1,5 +1,11 @@
 @import '../../../_variables';
 
+/*TODO
+- Eliminate scrolling when modal is active
+- Add top padding for view
+*/
+
+
 .offer.modal {
   position: fixed;
   z-index: 2;
