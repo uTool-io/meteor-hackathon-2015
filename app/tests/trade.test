@@ -1,0 +1,46 @@
+As a buyer
+I want to start a trade
+So I can get cool items
+
+  Scenario: Start a trade
+   Given I'm logged in
+   And I'm on '/'
+   When I double tap an item
+   And I visit /profile
+   Then I should see the item in a list
+   And the item should have a status of 'open' and 'offered'
+
+As a seller
+I want to be notified of a new trade
+So I can take care of it
+
+  Scenario: Seller is notified of a new trade
+    Given I log-in to the app
+    When I visit '/myprofile'
+    Then I should see a list of items
+    With a status of 'open' and 'offered'
+
+  Scenario: Counter a trade item
+
+    Given I have a new trade
+    And I decline the offered item
+    And I propose a counter item
+    Then the item should have a status of 'open' and 'countered'
+
+  Scenario: Accept a trade
+
+    Given I have a new trade
+    When I accept the offered item
+    Then the item should have a status of 'closed' and "successful"
+
+  Scenario: Decline a trade
+
+    Given I have a new trade
+    When I decline the offered item
+    Then the item should have a status of 'closed' and 'denied'
+
+buyer = loggedInUser
+seller = loggedInUser
+
+offered item = buyerId + item they like
+counter item = countered, sellerId + item they like
