@@ -1,4 +1,5 @@
 <template name="tradeItem">
+
     {{#each trades}}
         <div class="ui items">
             <div class="ui item user-offering">
@@ -8,15 +9,8 @@
                     <div class="ui image small">
                         <img src="{{offeredItemId}}">
                     </div>
-                    <div class="extra content">
-                        <div class="ui input">
-                            <input name="confirm-offering" id="trade-confirm" type="radio" vale="1"><label for="">Ready
-                            to trade</label>
-                        </div>
-                    </div>
                 </div>
             </div>
-
             <div class="ui item offering">
                 <h2 class="ui top attached header">{{selectedItemOwnerName}}'s offering</h2>
 
@@ -32,7 +26,7 @@
         <div class="ui buttons">
             <button class="ui button" name="cancel-trade">Cancel</button>
             <div class="or"></div>
-            <button class="ui positive button" id="confirm-trade">Submit</button>
+            <button class="ui positive button" id="complete-trade">Submit</button>
         </div>
     {{/each}}
 </template>
