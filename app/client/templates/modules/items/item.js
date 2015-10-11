@@ -1,8 +1,8 @@
 Template.item.events({
     'click #toggleCard': function (event) {
         event.preventDefault();
-
-        console.log('toggle card helper based on id ' + this._id);
+        Session.set('cardToggled', this._id);
+        console.log(this._id);
     },
     'click #likeItem': function (event) {
         //@TODO: Create a likeItem button in item template
