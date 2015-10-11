@@ -1,4 +1,6 @@
 Template.webcam.onRendered(function () {
+    //FlowRouter.triggers.exit([Webcam.reset()]);
+
     Webcam.on('error', function (error) {
         console.error(error);
     });

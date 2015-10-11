@@ -21,6 +21,7 @@ FlowRouter.route('/post', {
 FlowRouter.route('/trade', {
     name: 'trade',
     action: function () {
+        Webcam.reset();
         BlazeLayout.render('layout', {
             content: 'trade'
         });
