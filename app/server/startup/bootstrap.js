@@ -60,4 +60,16 @@ Meteor.startup(function () {
             likes: 0
         });
     };
+
+    if (Offers.find().count() === 0) {
+
+      Offers.insert({
+          selectedItemId: '/images/items/damir/bass.jpg',
+          offeredItemId: '/images/items/husam/lespaul.jpg',
+          offerredBy: husam._id,
+          offeredAt: now,
+          openTrade: true,
+          cancelOffer: {}
+      });
+    };
 });
