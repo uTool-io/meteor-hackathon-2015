@@ -45,8 +45,7 @@ Template.offer.events({
                     if (error) {
                        console.error('createTrade method failed: ' + error.reason);
                     } else {
-                        // @TODO: send to trades/:tradeId + filter out offers if openTrade true
-                        FlowRouter.go('trades/:tradeId');
+                        FlowRouter.go('/exchange');
                     }
                 });
             }
