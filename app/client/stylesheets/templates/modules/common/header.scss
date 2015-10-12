@@ -7,28 +7,27 @@
   width: 100%;
 
   .topnav {
+    padding: $space-tiny;
+    background-color: $primary-color;
+    position: relative;
+    text-align: center;
+    padding: $space-base;
+    color: $light;
 
-      padding: $space-tiny;
-      background-color: $primary-color;
-      position: relative;
-      text-align: center;
-      padding: $space-base;
-      color: $light;
+    .logo {
+      border: $space-atomic solid $light;
+      margin-left: $space-base;
+      display: inline-block !important;
+      position: absolute;
+      top: $space-atomic;
+      left: 0;
+      width: $space-huge;
+    }
 
-      .logo {
-        border: $space-atomic solid $light;
-        margin-left: $space-base;
-        display: inline-block !important;
-        position: absolute;
-        top: $space-atomic;
-        left: 0;
-        width: $space-huge;
-      }
-
-          .view-title {
-            display: inline;
-            font-size: $font-size-base;
-            font-size: 1rem;
-          }
-        }
-      }
+    .view-title {
+      display: inline;
+      font-size: $font-size-base;
+      font-size: 1rem;
+    }
+  }
+}

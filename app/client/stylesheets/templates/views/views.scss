@@ -1,10 +1,9 @@
 @import '../../_variables';
 
 .view {
-  padding: $space-jumbo 0;
-  background-color: $gray-lighter;
+  margin: $space-jumbo auto;
 
   &.post {
-    padding: 0;
+    margin: 0 auto;
   }
 }
