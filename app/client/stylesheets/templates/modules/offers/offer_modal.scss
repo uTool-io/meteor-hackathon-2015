@@ -15,58 +15,66 @@
   height: 100%;
   width: 100%;
   padding: $space-base $space-base;
-  border: 1px solid $gray-light;
+  border: $space-atomic solid $gray-light;
+  padding-top: 3rem;
 
-  .ui.attached.header {
-    border: none;
-  }
-
-  .ui.dividing.header {
-    border-bottom: none;
-  }
-
-  .item {
-    padding: $space-base + $space-small $space-base;
-
-    small {
-      display: block;
-      color: $gray;
+    .item {
+      margin-bottom: $space-large;
+      background-color: $gray-lighter;
     }
 
-    &.user-offering {
-      border-bottom: $space-atomic solid $gray;
-      background: $light;
+    .ui.item.user-offering {
+      border: $space-atomic solid darken($gray-lighter, 20%);
+      padding: $space-base 0;
 
-      img {
-        box-shadow: $space-atomic $space-atomic $space-atomic $gray;
-      }
-    }
-
-    &.offering {
-    }
-  }
-
-  .actions {
-    text-align: right;
-    background: lighten($gray-light, 35%);
-
-    .ui.two.fluid.buttons {
-      .button {
-        width: auto;
-
-        &.red {
-          background: $negative-color !important;
-          color: $light !important;
-          border: $space-atomic solid $negative-color;
+      .header {
+        border: none;
+        background: none;
+        font-size: 1.5rem;
+        small {
+          display: block;
+          color: $gray;
+          font-size: 1rem;
         }
+      }
 
-        &.green.button {
-          background: $primary-color !important;
-          color: $light !important;
+      .ui.tiny.images {
+        text-align: center;
+        img {
+          height: 8rem;
+          width: 8rem;
+          background: $gray-lighter;
+          padding: $space-tiny;
+          border: $space-atomic solid $gray-lighter;
+          box-shadow: 1px 1px 1px $gray;
+
+          &:hover,
+          &:focus,
+          &:active {
+            background: $primary-color;
+          }
+
+        }
+        img:active {
+          background: $primary-color;
           border: $space-atomic solid $primary-color;
         }
       }
+    }
 
+    .ui.item.offering {
+      border: $space-atomic solid darken($gray-lighter, 20%);
+      text-align: center;
+
+      .header {
+        border: none;
+        background: none;
+        font-size: 1.5rem;
+      }
+      img {
+        width: 8rem;
+        height: 8rem;
       }
     }
-}
+
+  }

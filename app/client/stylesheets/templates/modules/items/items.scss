@@ -32,6 +32,10 @@
 
   &.user {
 
+    .item {
+      width: 40%;
+    }
+
     .user.item.image {
       margin: 0;
       padding: $space-tiny;
