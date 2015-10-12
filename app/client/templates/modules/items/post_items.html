@@ -1,0 +1,21 @@
+<template name="postItems">
+    <div class="ui post items module">
+        <div class="ui fluid card">
+            <div class="content">
+                <h2 class="title">
+                    <input type="text" name="title" class="title input" placeholder="Write your title" autofocus/>
+                </h2>
+
+                <div class="meta">
+                    <p class="owner">Offered by <a class="name" href="#">{{currentUser.profile.name}}</a></p>
+                </div>
+            </div>
+            <div class="image">
+                <img src="{{acceptedPhoto}}"/>
+            </div>
+            <div class="content">
+                <button class="fluid ui button" id="postItem">Post Item <i class="checkmark icon"></i></button>
+            </div>
+        </div>
+    </div>
+</template>

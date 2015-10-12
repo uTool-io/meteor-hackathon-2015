@@ -1,5 +1,11 @@
+Template.webcam.onCreated(function () {
+    Session.setDefault('webcamSnap', false);
+});
+
 Template.webcam.onRendered(function () {
     FlowRouter.reload();
+
+    Session.set('webcamSnap', false);
 
     Webcam.on('error', function (error) {
         console.error(error);
@@ -18,10 +24,24 @@ Template.webcam.onRendered(function () {
 });
 
 Template.webcam.events({
-    'click .snap.photo.button': function () {
+    'click .snap.photo.button': function (event) {
+        event.preventDefault();
+
         Webcam.snap(function (image) {
             Session.set('webcamSnap', image);
         });
+    },
+    'click .retake.photo.button': function (event) {
+        event.preventDefault();
+
+        Session.set('webcamSnap', false);
+    },
+    'click .accept.photo.button': function (event, template) {
+        event.preventDefault();
+
+        var snapData = Session.get('webcamSnap');
+
+        Session.set('acceptedPhoto', snapData);
     }
 });
 

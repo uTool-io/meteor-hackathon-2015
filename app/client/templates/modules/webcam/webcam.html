@@ -3,7 +3,14 @@
         <div class="webcam"></div>
         <button class="ui huge circular primary snap photo icon button"><i class="icon camera"></i></button>
         {{#if image}}
-            <img class="ui small image" src="{{image}}">
+            <div class="photo preview">
+                <img class="ui centered fluid image" src="{{image}}">
+                <div class="ui buttons">
+                    <button class="ui retake photo button">Retake Photo</button>
+                    <div class="or"></div>
+                    <button class="ui positive accept photo button">Accept Photo</button>
+                </div>
+            </div>
         {{/if}}
     </div>
 </template>

@@ -2,9 +2,9 @@ Meteor.methods({
     postItem: function (itemAttributes) {
         check(itemAttributes, Object);
 
-        var now = newDate(),
+        var now = new Date(),
             user = Meteor.user(),
-            duplicateItem = Items.findOne({$or: [{item: itemAttributes.item}, {image: itemAttributes.image}]});
+            duplicateItem = Items.findOne({$or: [{title: itemAttributes.title}, {image: itemAttributes.image}]});
 
         if (!user) {
             throw new Meteor.Error('user-not-logged-in', 'You need to login to post an item.');
@@ -31,9 +31,13 @@ Meteor.methods({
         }
     },
     updateItem: function () {
-
+        // @TODO: create updateItem method and modules
     },
     removeItem: function () {
-
+        // @TODO: create removeItem method and event
+        // add removed object to itemId
+        // with date object removed
+        // $not: {removed: typeof 'object'}
+        // else remove === false
     }
 });
