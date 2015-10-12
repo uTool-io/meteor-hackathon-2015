@@ -44,7 +44,10 @@ Meteor.methods({
             throw new Meteor.Error('offer-trade-open', 'The offerId ' + offerId + ' is already open for trading in the Trades collection');
         } else {
             Offers.update(offerId, {$set: {openTrade: true}});
-            //@TODO: insert offerId into trades collection
+
+            Meteor.call('createTrade', offerId, function (error) {
+              console.error('createTrade method failed: ' + error.reason);
+            });
         }
     },
     cancelOffer: function (offerId, cancelAttributes) {

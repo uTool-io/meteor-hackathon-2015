@@ -31,22 +31,10 @@ Template.offer.events({
             if (error) {
                 console.error('acceptOffer method failed: ' + error.reason);
             } else {
-
-              // var offeredItemImage = Offers.findOne({_id: offer.offeredItemImage});
-              // console.log(offeredItemImage);
-              // var selectedItemOwnerName
-                Trades.insert({
-                  offerId: offerId,
-                  createdAt: now,
-                  tradeVerdict: false
-                  // buyerName: '',
-                  // buyerPhoto: ''
-                });
+              }
+            });
 
 // @TODO: send to trades/:tradeId + filter out offers if openTrade true
                 FlowRouter.go('trades/:tradeId');
             }
-            ;
         });
-    }
-});

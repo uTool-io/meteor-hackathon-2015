@@ -9,10 +9,16 @@ Meteor.methods({
 // });
 
  createTrade: function(offerId) {
-   Trades.insert({
-     offerId: offerId,
-     createdAt: new Date(),
-     tradeVerdict: false
-   })
- }
-});
+    check(offerId, String);
+    var now = new Date();
+        if (offerId) {
+          Trades.insert({
+             offerId: offerId,
+             createdAt: now,
+             tradeVerdict: false
+           });
+         } else {
+              console.log('whats a matta w/ you?')
+          }
+      }
+  });
