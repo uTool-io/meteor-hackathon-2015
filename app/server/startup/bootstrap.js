@@ -73,15 +73,9 @@ Meteor.startup(function () {
         //});
 
         Trades.insert({
-            selectedItemId: '/images/items/damir/bass.jpg',
-            selectedItemOwnerId: '',
-            selectedItemOwnerName: 'Damir',
-            offeredItemId: '/images/items/husam/lespaul.jpg',
-            offeredBy: husam._id,
-            ownerName: 'Husam',
-            offeredAt: now,
-            completedTrade: 'false',
-            cancelOffer: {}
+          offerId: 'test',
+          createdAt: new Date(),
+          tradeVerdict: true
         });
     }
     ;
