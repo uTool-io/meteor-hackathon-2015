@@ -1,5 +1,5 @@
 Template.webcam.onRendered(function () {
-    //FlowRouter.triggers.exit([Webcam.reset()]);
+    FlowRouter.reload();
 
     Webcam.on('error', function (error) {
         console.error(error);
@@ -21,7 +21,7 @@ Template.webcam.events({
     'click .snap.button': function () {
         Webcam.snap(function (image) {
             Session.set('webcamSnap', image);
-        })
+        });
     }
 });
 

@@ -1,3 +1,5 @@
+FlowRouter.triggers.enter([AccountsTemplates.ensureSignedIn]);
+
 FlowRouter.route('/', {
     name: 'root',
     action: function () {
@@ -10,8 +12,7 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/post', {
     name: 'post',
-    action: function () {
-        Webcam.reset();
+    action: function (context) {
         BlazeLayout.render('layout', {
             content: 'post'
         });
@@ -68,5 +69,3 @@ FlowRouter.notFound = {
         GAnalytics.pageview();
     }
 };
-
-FlowRouter.triggers.enter([AccountsTemplates.ensureSignedIn]);
