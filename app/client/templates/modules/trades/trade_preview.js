@@ -6,3 +6,9 @@ Template.tradePreview.onCreated(function () {
         self.subscribe('trades');
     });
 });
+
+Template.tradePreview.helpers({
+    trades: function () {
+      return Trades.find();
+    }
+});
