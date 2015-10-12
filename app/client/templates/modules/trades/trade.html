@@ -1,6 +1,13 @@
 <template name="trade">
-    <div class="ui trade item">
-        <p>owner: {{ownerId}}</p>
-        <p>offer: {{offerId}}</p>
-    </div>
+    <a class="trade item" href="/exchange/{{_id}}">
+        <div class="ui tiny image">
+            <img class="selected image" src="{{selectedItemImage}}">
+        </div>
+        <div class="content">
+            <h2 class="header">{{selectedItemOwnerName}}</h2>
+            <div class="description">
+                <p>wants to trade a <b>{{selectedItemTitle}}</b> for your <b>{{offeredItemTitle}}</b>.</p>
+            </div>
+        </div>
+    </a>
 </template>
