@@ -48,7 +48,7 @@ Meteor.methods({
             // Moved this call to client in offer event - click .accept.offer.button
             // nested inside the acceptOffer call - when it passes, it calls createTrade
             // if that passes, it routes to /trade
-
+            // you can remove this after reading
             //Meteor.call('createTrade', offerId, function (error) {
             //  console.error('createTrade method failed: ' + error.reason);
             //});

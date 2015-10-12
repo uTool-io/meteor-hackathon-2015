@@ -35,9 +35,7 @@ Template.offer.events({
     'click .accept.offer.button': function (event) {
         event.preventDefault();
 
-        var now = new Date(),
-            userId = Meteor.user()._id,
-            offerId = this._id;
+        var offerId = this._id;
 
         Meteor.call('acceptOffer', offerId, function (error) {
             if (error) {
