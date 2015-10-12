@@ -6,11 +6,19 @@ html {
 
     .layout {
 
-      .main {
+      header.header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: $full;
+        z-index: 10;
+      }
+
+      main.main {
         position: relative;
       }
 
-      .footer {
+      footer.footer {
         position: fixed;
         bottom: 0;
         width: $full;
