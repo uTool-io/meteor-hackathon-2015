@@ -31,9 +31,13 @@ Meteor.methods({
         }
     },
     updateItem: function () {
-
+        // @TODO: create updateItem method and modules
     },
     removeItem: function () {
-
+        // @TODO: create removeItem method and event
+        // add removed object to itemId
+        // with date object removed
+        // $not: {removed: typeof 'object'}
+        // else remove === false
     }
 });
