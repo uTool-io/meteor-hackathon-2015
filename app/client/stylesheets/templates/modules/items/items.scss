@@ -5,36 +5,57 @@
 
   .item.column {
     margin: 0;
+  }
 
-    .ui.fluid.card {
-      text-align: center;
+  .ui.fluid.card {
+    text-align: center;
 
-      .image {
-        cursor: pointer;
-      }
+    .image {
+      cursor: pointer;
+    }
 
-      .content {
-        padding: $space-small;
+    .content {
+      padding: $space-small;
 
-          button {
-            background: none;
-            color: $primary-color;
-            font-size: $font-size-base + $font-size-tiny;
-            border: $space-atomic solid $primary-color;
+      button {
+        background: none;
+        color: $primary-color;
+        font-size: $font-size-base + $font-size-tiny;
+        border: $space-atomic solid $primary-color;
 
-            i {
-              color: $primary-color;
-            }
-          }
+        i {
+          color: $primary-color;
         }
       }
     }
+  }
 
   &.user {
 
     .user.item.image {
       margin: 0;
       padding: $space-tiny;
+    }
+  }
+
+  &.post {
+    display: flex;
+    height: $fluid-full;
+    padding: $space-base;
+    align-items: center;
+    justify-content: center;
+
+    .ui.fluid.card {
+
+      .title.input {
+        border: 0;
+        outline: 0;
+        text-align: center;
+      }
+
+      .meta {
+        margin: $space-tiny auto;
+      }
     }
   }
 }

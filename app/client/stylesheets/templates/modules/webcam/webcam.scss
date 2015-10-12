@@ -24,4 +24,27 @@
     margin: 0;
     z-index: 1;
   }
+
+  .photo.preview {
+    position: fixed;
+    top: 0;
+    width: $full;
+    height: $fluid-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $dark;
+    z-index: 2;
+
+    .image {
+      flex: none;
+    }
+
+    .ui.buttons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: $full;
+    }
+  }
 }
