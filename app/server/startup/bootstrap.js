@@ -17,7 +17,6 @@ Meteor.startup(function () {
             }
         });
     }
-    ;
 
     var now = new Date(),
         husam = Meteor.users.findOne(userHusam),
@@ -61,22 +60,4 @@ Meteor.startup(function () {
             likes: 0
         });
     }
-    ;
-
-    if (Trades.find().count() === 0) {
-        // @TODO: Trades schema
-        // create a createTrade method and call it in acceptOffer method
-        //Trades.insert({
-        //    offerId: offerId, //see offers for examples on getting data from this id
-        //    createdAt: new Date(),
-        //    tradeFinal: false  //feel free to change to a better var
-        //});
-
-        Trades.insert({
-          offerId: 'test',
-          createdAt: new Date(),
-          tradeVerdict: true
-        });
-    }
-    ;
 });

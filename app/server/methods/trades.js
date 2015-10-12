@@ -1,24 +1,21 @@
 Meteor.methods({
+    createTrade: function (offerId) {
+        check(offerId, String);
+        var now = new Date(),
+            user = Meteor.user();
 
-// @TODO: Trades schema
-// create a createTrade method and call it in acceptOffer method
-// Trades.insert({
-//    offerId: offerId, //see offers for examples on getting data from this id
-//    createdAt: new Date(),
-//    tradeFinal: false  //feel free to change to a better var
-// });
-
- createTrade: function(offerId) {
-    check(offerId, String);
-    var now = new Date();
-        if (offerId) {
-          Trades.insert({
-             offerId: offerId,
-             createdAt: now,
-             tradeVerdict: false
-           });
-         } else {
-              console.log('whats a matta w/ you?')
-          }
-      }
-  });
+        if (!user) {
+            throw new Meteor.Error('user-not-logged-in', 'You need to login to create a trade.');
+        }
+        if (!offerId) {
+            throw new Meteor.Error('offerId-does-not-exist', 'The offerId ' + offerId + ' no longer exists in the Offers collection');
+        } else {
+            Trades.insert({
+                offerId: offerId,
+                ownerId: user._id,
+                createdAt: now,
+                tradeVerdict: false
+            });
+        }
+    }
+});

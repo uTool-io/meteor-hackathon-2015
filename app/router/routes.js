@@ -12,7 +12,7 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/post', {
     name: 'post',
-    action: function (context) {
+    action: function () {
         BlazeLayout.render('layout', {
             content: 'post'
         });
@@ -20,22 +20,21 @@ FlowRouter.route('/post', {
     }
 });
 
-FlowRouter.route('/trades', {
-    name: 'trades',
+FlowRouter.route('/exchange', {
+    name: 'exchange',
     action: function () {
         BlazeLayout.render('layout', {
-            content: 'trades'
+            content: 'exchange'
         });
         GAnalytics.pageview();
     }
 });
 
-// @TODO: Add dynamic URL
-FlowRouter.route('/trades/trade', {
-    name: 'trade',
+FlowRouter.route('/exchange/:tradeId', {
+    name: 'transaction',
     action: function () {
         BlazeLayout.render('layout', {
-            content: 'trade'
+            content: 'transaction'
         });
         GAnalytics.pageview();
     }
