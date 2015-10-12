@@ -43,10 +43,15 @@ Template.offer.events({
             if (error) {
                 console.error('acceptOffer method failed: ' + error.reason);
             } else {
+                Meteor.call('createTrade', offerId, function (error) {
+                    if (error) {
+                       console.error('createTrade method failed: ' + error.reason);
+                    } else {
+                        // @TODO: send to trades/:tradeId + filter out offers if openTrade true
+                        FlowRouter.go('trades/:tradeId');
+                    }
+                });
             }
         });
-
-        // @TODO: send to trades/:tradeId + filter out offers if openTrade true
-        FlowRouter.go('trades/:tradeId');
     }
 });

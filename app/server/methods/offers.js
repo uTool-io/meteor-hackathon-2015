@@ -45,9 +45,13 @@ Meteor.methods({
         } else {
             Offers.update(offerId, {$set: {openTrade: true}});
 
-            Meteor.call('createTrade', offerId, function (error) {
-              console.error('createTrade method failed: ' + error.reason);
-            });
+            // Moved this call to client in offer event - click .accept.offer.button
+            // nested inside the acceptOffer call - when it passes, it calls createTrade
+            // if that passes, it routes to /trade
+
+            //Meteor.call('createTrade', offerId, function (error) {
+            //  console.error('createTrade method failed: ' + error.reason);
+            //});
         }
     },
     cancelOffer: function (offerId, cancelAttributes) {
