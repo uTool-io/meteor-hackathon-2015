@@ -1,5 +1,12 @@
 <template name="post">
     <div class="post view">
         {{> webcam}}
+        <div class="ui post item form">
+            <div class="required field">
+                <label class="label">Title</label>
+                <input type="text" name="title" class="input" placeholder="Write a title for your item" />
+            </div>
+            <button type="submit" class="ui primary button" id="postItem">Post Item</button>
+        </div>
     </div>
 </template>

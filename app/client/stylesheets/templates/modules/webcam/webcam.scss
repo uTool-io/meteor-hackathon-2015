@@ -1,0 +1,27 @@
+@import '../../../_variables';
+
+.webcam.module {
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  .webcam {
+    width: $full !important;
+    height: $fluid-full !important;
+    background-color: $dark;
+
+    video {
+      width: $full !important;
+      height: $fluid-full !important;
+      transform: none !important;
+    }
+  }
+
+  .snap.photo.button {
+    position: fixed;
+    left: $half;
+    bottom: $space-jumbo;
+    margin: 0;
+    z-index: 1;
+  }
+}

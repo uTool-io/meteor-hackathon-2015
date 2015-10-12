@@ -14,11 +14,11 @@ Template.webcam.onRendered(function () {
         jpeg_quality: 90
     });
 
-    Webcam.attach('.webcam.module');
+    Webcam.attach('.webcam.module .webcam');
 });
 
 Template.webcam.events({
-    'click .snap.button': function () {
+    'click .snap.photo.button': function () {
         Webcam.snap(function (image) {
             Session.set('webcamSnap', image);
         });
