@@ -5,12 +5,13 @@ Template.offer.events({
         var now = new Date(),
             userId = Meteor.user()._id,
             offerId = this._id,
+
             offer = document.getElementById(offerId),
             cancelAttributes = {
                 cancelledBy: userId,
                 cancelledAt: now
             };
-
+            console.log (offerId);
         Meteor.call('cancelOffer', offerId, cancelAttributes, function (error) {
             if (error) {
                 console.error('cancelOffer method failed: ' + error.reason);
@@ -22,15 +23,30 @@ Template.offer.events({
     'click .accept.offer.button': function (event) {
         event.preventDefault();
 
-        var offerId = this._id;
+        var now = new Date(),
+            userId = Meteor.user()._id,
+            offerId = this._id
 
         Meteor.call('acceptOffer', offerId, function (error) {
             if (error) {
                 console.error('acceptOffer method failed: ' + error.reason);
             } else {
-                // @TODO: send to trades/:tradeId + filter out offers if openTrade true
-                FlowRouter.go('trade');
+
+              // var offeredItemImage = Offers.findOne({_id: offer.offeredItemImage});
+              // console.log(offeredItemImage);
+              // var selectedItemOwnerName
+                Trades.insert({
+                  offerId: offerId,
+                  createdAt: now,
+                  tradeVerdict: false
+                  // buyerName: '',
+                  // buyerPhoto: ''
+                });
+
+// @TODO: send to trades/:tradeId + filter out offers if openTrade true
+                FlowRouter.go('trades/:tradeId');
             }
+            ;
         });
     }
 });

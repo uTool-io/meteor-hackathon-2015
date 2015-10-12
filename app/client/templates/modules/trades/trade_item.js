@@ -10,6 +10,7 @@ Template.tradeItem.onCreated(function () {
 Template.tradeItem.helpers({
     trades: function () {
       return Trades.find();
+      console.log(trades);
     }
 });
 
