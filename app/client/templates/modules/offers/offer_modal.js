@@ -19,7 +19,7 @@ Template.offerModal.events({
     'click #createOffer': function (event) {
         event.preventDefault();
 
-        var offeredItemId = $('.offered.user.image').attr('id'),
+        var offeredItemId = $('.user.selection .active.item').attr('id'),
             selectedItemId = this._id,
             selectedItemOwnerId = this.ownerId;
 
