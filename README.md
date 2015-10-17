@@ -66,4 +66,4 @@ TODO
 - [ ] METEOR PACKAGE
 - [ ] NPM PACKAGE
 - [ ] GULP:INIT 
-- [ ] DOCUMENTATION -- WIP - [https://github.com/withpulp/quicktrade.wiki](https://github.com/withpulp/quicktrade.wiki)
+- [ ] DOCUMENTATION -- WIP - [https://github.com/withpulp/quicktrade/wiki](https://github.com/withpulp/quicktrade/wiki)
