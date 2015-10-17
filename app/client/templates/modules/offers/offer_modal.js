@@ -5,6 +5,7 @@ Template.offerModal.onCreated(function () {
     });
 
     Session.setDefault('offerModal', false);
+    $('body').addClass('zeroflow');
 });
 
 Template.offerModal.events({
@@ -13,6 +14,7 @@ Template.offerModal.events({
         console.log('closed modal ' + this._id);
 
         Session.set('offerModal', false);
+        $('body').removeClass('zeroflow');
     },
     'click #createOffer': function (event) {
         event.preventDefault();
@@ -27,6 +29,7 @@ Template.offerModal.events({
                 console.error('createOffer method failed: ' + error.reason);
             } else {
                 Session.set('offerModal', false);
+                $('body').removeClass('zeroflow');
             }
         });
     }

@@ -1,15 +1,14 @@
 <template name="offerModal">
     <aside class="offer modal module animated fadeIn" id="{{_id}}">
-        <div class="selected">
+        <div class="selected" style="background: url({{image}})">
             <h2 class="ui centered header">
                 Select Your Offerings
-                <small class="selected">for {{ownerName}}'s {{title}}</small>
+                <small class="owner">for {{ownerName}}'s {{title}}</small>
             </h2>
-            <img class="ui tiny centered image" src="{{image}}"/>
+            <p class="ui sub header">Which items would you like to barter?</p>
         </div>
 
         <div class="offers">
-            <p>Which items would you like to barter?</p>
             {{> userItems}}
         </div>
 

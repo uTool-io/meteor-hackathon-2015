@@ -6,82 +6,64 @@
 
 .offer.modal {
   position: fixed;
+  overflow-y: auto;
   top: 0;
   left: 0;
   height: $full;
   width: $full;
-  padding: $space-base;
-  border: $space-atomic solid $gray-light;
+  padding: 0;
   background-color: $light;
   z-index: 10;
 
-  .item {
-    margin-bottom: $space-large;
+  .selected {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $full;
+    height: $fluid-quarter + 10vh;
+    padding: $space-base;
     background-color: $gray-lighter;
-  }
-
-  .ui.item.user-offering {
-    border: $space-atomic solid darken($gray-lighter, 20%);
-    padding: $space-base 0;
+    background-size: cover !important;
+    background-position: $half $half !important;
+    background-repeat: no-repeat !important;
+    z-index: 1;
 
     .header {
-      border: none;
-      background: none;
-      font-size: 1.5rem;
+      line-height: $line-height-large;
 
-      small {
+      .owner {
         display: block;
+        border-top: $space-micro solid $gray;
         color: $gray;
-        font-size: 1rem;
+        font-size: $half;
       }
     }
 
-    .ui.tiny.images {
+    .sub.header {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: $full;
+      margin: 0;
+      padding: $space-tiny;
+      background: $gray-lighter;
       text-align: center;
-
-      img {
-        height: 8rem;
-        width: 8rem;
-        background: $gray-lighter;
-        padding: $space-tiny;
-        border: $space-atomic solid $gray-lighter;
-        box-shadow: 1px 1px 1px $gray;
-
-        &:hover,
-        &:focus,
-        &:active {
-          background: $primary-color;
-        }
-
-      }
-
-      img:active {
-        background: $primary-color;
-        border: $space-atomic solid $primary-color;
-      }
     }
   }
 
-  .ui.item.offering {
-    border: $space-atomic solid darken($gray-lighter, 20%);
-    text-align: center;
-
-    .header {
-      border: none;
-      background: none;
-      font-size: 1.5rem;
-    }
-
-    img {
-      width: 8rem;
-      height: 8rem;
-    }
+  .offers {
+    position: absolute;
+    top: $fluid-quarter + 10vh;
+    left: 0;
+    width: $full;
+    margin-bottom: $space-huge;
+    padding: $space-mini + $space-atomic;
   }
 
-  .ui.buttons {
+  .ui.two.buttons {
     position: fixed;
     bottom: 0;
     left: 0;
+    background: $light;
   }
-
 }

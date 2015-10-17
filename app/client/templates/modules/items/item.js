@@ -3,5 +3,6 @@ Template.item.events({
         event.preventDefault();
 
         Session.set('offerModal', this._id);
+        $('body').addClass('zeroflow');
     }
 });
