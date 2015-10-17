@@ -1,20 +1,16 @@
 <template name="offerModal">
     <aside class="offer modal module animated fadeIn" id="{{_id}}">
-        <div class="ui item user-offering">
-          <h2 class="ui top attached centered header">
+        <h2 class="ui centered header">
             Select Your Offerings
-              <small>Which items would you like to barter?</small>
-          </h2>
+            <small class="selected">for {{ownerName}}'s {{title}}</small>
+        </h2>
+        <img class="ui tiny centered image" src="{{image}}" />
+        <div class="ui item user-offering">
+            <h3 class="ui centered header">
+                Which items would you like to barter?
+            </h3>
             <div class="ui tiny images">
                 {{> userItems}}
-            </div>
-        </div>
-        <div class="ui item offering">
-            <h2 class="ui top attached centered header">
-                {{ownerName}}'s offerings
-            </h2>
-            <div class="ui tiny images">
-                <img src="{{image}}"/>
             </div>
         </div>
         <div class="actions">
