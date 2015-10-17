@@ -1,80 +1,87 @@
 @import '../../../_variables';
 
-/*TODO
-- Eliminate scrolling when modal is active
-- Add top padding for view
-*/
-
+// @TODO
+// Eliminate scrolling when modal is active
+// Add top padding for view
 
 .offer.modal {
   position: fixed;
-  z-index: 2;
   top: 0;
   left: 0;
-  background: $light;
-  height: 100%;
-  width: 100%;
-  padding: $space-base $space-base;
+  height: $full;
+  width: $full;
+  padding: $space-base;
   border: $space-atomic solid $gray-light;
-  padding-top: 3rem;
+  background-color: $light;
+  z-index: 10;
 
-    .item {
-      margin-bottom: $space-large;
-      background-color: $gray-lighter;
-    }
+  .item {
+    margin-bottom: $space-large;
+    background-color: $gray-lighter;
+  }
 
-    .ui.item.user-offering {
-      border: $space-atomic solid darken($gray-lighter, 20%);
-      padding: $space-base 0;
+  .ui.item.user-offering {
+    border: $space-atomic solid darken($gray-lighter, 20%);
+    padding: $space-base 0;
 
-      .header {
-        border: none;
-        background: none;
-        font-size: 1.5rem;
-        small {
-          display: block;
-          color: $gray;
-          font-size: 1rem;
-        }
-      }
+    .header {
+      border: none;
+      background: none;
+      font-size: 1.5rem;
 
-      .ui.tiny.images {
-        text-align: center;
-        img {
-          height: 8rem;
-          width: 8rem;
-          background: $gray-lighter;
-          padding: $space-tiny;
-          border: $space-atomic solid $gray-lighter;
-          box-shadow: 1px 1px 1px $gray;
-
-          &:hover,
-          &:focus,
-          &:active {
-            background: $primary-color;
-          }
-
-        }
-        img:active {
-          background: $primary-color;
-          border: $space-atomic solid $primary-color;
-        }
+      small {
+        display: block;
+        color: $gray;
+        font-size: 1rem;
       }
     }
 
-    .ui.item.offering {
-      border: $space-atomic solid darken($gray-lighter, 20%);
+    .ui.tiny.images {
       text-align: center;
 
-      .header {
-        border: none;
-        background: none;
-        font-size: 1.5rem;
-      }
       img {
-        width: 8rem;
         height: 8rem;
+        width: 8rem;
+        background: $gray-lighter;
+        padding: $space-tiny;
+        border: $space-atomic solid $gray-lighter;
+        box-shadow: 1px 1px 1px $gray;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background: $primary-color;
+        }
+
+      }
+
+      img:active {
+        background: $primary-color;
+        border: $space-atomic solid $primary-color;
       }
     }
-
   }
+
+  .ui.item.offering {
+    border: $space-atomic solid darken($gray-lighter, 20%);
+    text-align: center;
+
+    .header {
+      border: none;
+      background: none;
+      font-size: 1.5rem;
+    }
+
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  .ui.buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+}

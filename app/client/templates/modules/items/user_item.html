@@ -1,3 +1,8 @@
 <template name="userItem">
-    <img class="ui user image" id="{{_id}}" src="{{image}}" />
+    <div class="item" id="{{_id}}">
+        <img class="ui avatar image" src="{{image}}" />
+        <div class="content">
+            <div class="header">{{title}}</div>
+        </div>
+    </div>
 </template>
