@@ -1,3 +1,5 @@
 archive
 node_modules
 archive-mht-08.17.15
+.idea
+dist
