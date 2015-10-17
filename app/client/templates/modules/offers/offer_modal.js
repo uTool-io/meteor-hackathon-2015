@@ -18,10 +18,11 @@ Template.offerModal.events({
         event.preventDefault();
 
         var offeredItemId = $('.offered.user.image').attr('id'),
-            selectedItemId = this._id;
+            selectedItemId = this._id,
+            selectedItemOwnerId = this.ownerId;
 
 
-        Meteor.call('createOffer', selectedItemId, offeredItemId, function (error) {
+        Meteor.call('createOffer', selectedItemId, selectedItemOwnerId, offeredItemId, function (error) {
             if (error) {
                 console.error('createOffer method failed: ' + error.reason);
             } else {

@@ -1,6 +1,14 @@
 <template name="root">
     <div class="root view">
         {{> items}}
-        {{> cameraMdg}}
+
     </div>
+    {{#if currentUser}}
+        <div class="root view">
+            {{> items}}
+            {{> cameraMdg}}
+        </div>
+    {{else}}
+        {{> login}}
+    {{/if}}
 </template>

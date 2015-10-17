@@ -11,7 +11,7 @@ Template.offers.helpers({
     offers: function () {
         var userId = Meteor.user()._id,
             objectType = typeof 'object',
-            offers = Offers.find({offeredBy: userId, openTrade: false, cancelOffer: 'undefined', $or: [ {openTrade: false}, {cancelOffer: objectType} ]}, {sort: {offeredAt: -1}}),
+            offers = Offers.find({selectedItemOwner: userId, openTrade: false, cancelOffer: 'undefined', $or: [ {openTrade: false}, {cancelOffer: objectType} ]}, {sort: {offeredAt: -1}}),
             allOffers = [];
 
         offers.forEach(function (offer) {

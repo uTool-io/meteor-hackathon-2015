@@ -1,5 +1,9 @@
 <template name="exchange">
-    <div class="exchange view">
-        {{> trades}}
-    </div>
+    {{#if currentUser}}
+        <div class="exchange view">
+            {{> trades}}
+        </div>
+    {{else}}
+        {{> login}}
+    {{/if}}
 </template>

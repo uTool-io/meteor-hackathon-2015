@@ -1,5 +1,9 @@
 <template name="profile">
-    <div class="profile view">
-        {{> offers}}
-    </div>
+    {{#if currentUser}}
+        <div class="profile view">
+            {{> offers}}
+        </div>
+    {{else}}
+        {{> login}}
+    {{/if}}
 </template>

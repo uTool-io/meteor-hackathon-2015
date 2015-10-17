@@ -1,5 +1,9 @@
 <template name="transaction">
-    <div class="transaction view">
-        Show details about the tradeId transaction.
-    </div>
+    {{#if currentUser}}
+        <div class="transaction view">
+            Show details about the tradeId transaction.
+        </div>
+    {{else}}
+        {{> login}}
+    {{/if}}
 </template>
