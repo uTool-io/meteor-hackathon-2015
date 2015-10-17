@@ -12,7 +12,7 @@ var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 
 var pkg = require('./package.json');
-var dirs = pkg['h5bp-configs'].directories;
+var dirs = pkg["configs"].directories;
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
@@ -65,31 +65,12 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('copy', [
-    'copy:.htaccess',
-    'copy:index.html',
-    'copy:jquery',
-    'copy:license',
-    'copy:main.css',
-    'copy:misc',
-    'copy:normalize'
 ]);
 
 gulp.task('copy:.htaccess', function () {
     return gulp.src('node_modules/apache-server-configs/dist/.htaccess')
                .pipe(plugins.replace(/# ErrorDocument/g, 'ErrorDocument'))
                .pipe(gulp.dest(dirs.dist));
-});
-
-gulp.task('copy:index.html', function () {
-    return gulp.src(dirs.src + '/index.html')
-               .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
-               .pipe(gulp.dest(dirs.dist));
-});
-
-gulp.task('copy:jquery', function () {
-    return gulp.src(['node_modules/jquery/dist/jquery.min.js'])
-               .pipe(plugins.rename('jquery-' + pkg.devDependencies.jquery + '.min.js'))
-               .pipe(gulp.dest(dirs.dist + '/js/vendor'));
 });
 
 gulp.task('copy:license', function () {
