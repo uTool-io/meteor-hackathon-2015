@@ -1,6 +1,7 @@
 Meteor.methods({
-    createOffer: function (selectedItemId, offeredItemId) {
+    createOffer: function (selectedItemId, selectedItemOwnerId, offeredItemId) {
         check(selectedItemId, String);
+        check(selectedItemOwnerId, String);
         check(offeredItemId, String);
 
         var now = new Date(),
@@ -15,6 +16,7 @@ Meteor.methods({
         } else {
             Offers.insert({
                 selectedItemId: selectedItemId,
+                selectedItemOwner: selectedItemOwnerId,
                 offeredItemId: offeredItemId,
                 offeredBy: user._id,
                 offeredAt: now,
