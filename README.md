@@ -60,10 +60,10 @@
 ### TODO
 
 TODO
-- [x] METEOR - FE [https://github.com/amazingBastard/meteor-hackathon-2015]
+- [x] METEOR - FE [https://github.com/amazingBastard/meteor-hackathon-2015](https://github.com/amazingBastard/meteor-hackathon-2015)
 - [x] WITHPULP REPO
 - [ ] DOCKER CONTAINER
 - [ ] METEOR PACKAGE
 - [ ] NPM PACKAGE
 - [ ] GULP:INIT 
-- [ ] DOCUMENTATION -- WIP - [https://github.com/withpulp/quicktrade.wiki.git]
+- [ ] DOCUMENTATION -- WIP - [https://github.com/withpulp/quicktrade.wiki](https://github.com/withpulp/quicktrade.wiki)
