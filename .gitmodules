@@ -1,0 +1,9 @@
+[submodule "wiki"]
+	path = wiki
+	url = https://github.com/withpulp/quicktrade.wiki.git
+[submodule "archive-mht-10.15"]
+	path = archive-mht-10.15
+	url = https://github.com/amazingBastard/meteor-hackathon-2015.git
+[submodule "src"]
+	path = src
+	url = https://github.com/withpulp/quicktrade.git
