@@ -29,11 +29,18 @@
     z-index: 1;
 
     .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $full;
+      margin: 0;
+      padding: $space-micro;
+      background-color: $gray-lighter;
       line-height: $line-height-large;
 
       .owner {
         display: block;
-        border-top: $space-micro solid $gray;
+        margin: 0;
         color: $gray;
         font-size: $half;
       }
@@ -41,13 +48,14 @@
 
     .sub.header {
       position: absolute;
+      top: auto;
       bottom: 0;
       left: 0;
       width: $full;
       margin: 0;
       padding: $space-tiny;
       background: $gray-lighter;
-      text-align: center;
+      color: $header-color;
     }
   }
 
@@ -65,5 +73,9 @@
     bottom: 0;
     left: 0;
     background: $light;
+
+    .button {
+      border-radius: 0;
+    }
   }
 }
