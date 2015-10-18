@@ -1,0 +1,82 @@
+@import '../../../_variables';
+
+// @TODO
+// Eliminate scrolling when modal is active
+// Add top padding for view
+
+.offer.modal {
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  height: $full;
+  width: $full;
+  padding: 0;
+  background-color: $light;
+  background-size: cover !important;
+  background-position: $half $half !important;
+  background-repeat: no-repeat !important;
+  z-index: 10;
+
+  .selected {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $full;
+    height: $space-jumbo;
+    padding: $space-base;
+    background-color: $primary-color;
+    z-index: 1;
+
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $full;
+      margin: 0;
+      padding: $space-micro;
+      color: $light;
+      line-height: $line-height-large;
+
+      .owner {
+        display: block;
+        margin: 0;
+        color: $header-color;
+        font-size: $half;
+      }
+    }
+  }
+
+  .offers {
+    margin: 0;
+    padding: 0;
+    height: $fluid-full;
+    background-color: rgba($light, 0.85);
+
+    .user.list {
+      position: absolute;
+      width: $full;
+      margin: $space-jumbo auto;
+      padding: 0;
+
+      .item {
+        border-radius: 0;
+
+        &.active {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  .ui.two.buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $light;
+
+    .button {
+      border-radius: 0;
+    }
+  }
+}

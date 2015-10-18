@@ -1,0 +1,13 @@
+<template name="post">
+    {{#if currentUser}}
+        <div class="post view">
+            {{#if acceptedPhoto}}
+                {{> postItems}}
+            {{else}}
+                {{> webcam}}
+            {{/if}}
+        </div>
+    {{else}}
+        {{> login}}
+    {{/if}}
+</template>

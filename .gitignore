@@ -2,4 +2,5 @@ archive
 node_modules
 archive-mht-08.17.15
 .idea
-dist
+.DS_Store
+**/**/.DS_Store
