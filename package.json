@@ -60,6 +60,7 @@
     "url": "https://github.com/withpulp/quicktrade/issues"
   },
   "dependencies": {
+    "gulp-git": "^1.5.0",
     "require-dir": "^0.3.0"
   }
 }

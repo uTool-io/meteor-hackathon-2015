@@ -21,13 +21,13 @@ A P2P eCommerece/trading web-app
 
 TODO
 
-- [x] METEOR - FE [https://github.com/amazingBastard/meteor-hackathon-2015](https://github.com/amazingBastard/meteor-hackathon-2015)
-- [x] WITHPULP REPO
+- [x] METEOR - FE -- [https://github.com/amazingBastard/meteor-hackathon-2015](https://github.com/amazingBastard/meteor-hackathon-2015)
+- [x] WITHPULP REPO -- [https://github.com/withpulp/quicktrade](https://github.com/withpulp/quicktrade)
 - [x] VAGRANT CONTAINER
 - [ ] METEOR PACKAGE
 - [ ] NPM PACKAGE
 - [ ] GULP:INIT 
-- [ ] DOCUMENTATION -- WIP - [https://github.com/withpulp/quicktrade/wiki](https://github.com/withpulp/quicktrade/wiki)
+- [ ] DOCUMENTATION -- WIP -- [https://github.com/withpulp/quicktrade/wiki](https://github.com/withpulp/quicktrade/wiki)
 
 ## Dependancies
 
