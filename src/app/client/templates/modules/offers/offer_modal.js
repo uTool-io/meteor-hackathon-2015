@@ -18,18 +18,33 @@ Template.offerModal.events({
     },
     'click #createOffer': function (event) {
         event.preventDefault();
-
         var offeredItemId = $('.user.selection .active.item').attr('id'),
-            selectedItemId = this._id,
-            selectedItemOwnerId = this.ownerId;
+            offer = Items.findOne({_id: offeredItemId});
+
+        var selectedItem = {
+            selectedItemId: this._id,
+            selectedItemOwner: this.ownerId,
+            selectedItemOwnerName: this.ownerName,
+            selectedItemImage: this.image,
+            selectedItemTitle: this.title
+        };
+
+        var offeredItem = {
+            offeredItemId: offer._id,
+            offeredItemOwner: offer.ownerId,
+            offeredItemOwnerName: offer.ownerName,
+            offeredItemImage: offer.image,
+            offeredItemTitle: offer.title
+        };
 
 
-        Meteor.call('createOffer', selectedItemId, selectedItemOwnerId, offeredItemId, function (error) {
+        Meteor.call('createOffer', selectedItem, offeredItem, function (error) {
             if (error) {
-                console.error('createOffer method failed: ' + error.reason);
+                return throwError(error.reason);
             } else {
                 Session.set('offerModal', false);
                 $('body').removeClass('zeroflow');
+                FlowRouter.go('/barters');
             }
         });
     }

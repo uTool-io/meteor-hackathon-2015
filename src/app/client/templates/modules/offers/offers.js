@@ -31,5 +31,9 @@ Template.offers.helpers({
         });
 
         return allOffers;
+    },
+    userOffers: function () {
+        var userId = Meteor.user()._id;
+        return Offers.find({createdBy: userId, status: {pending: true, accepted: false, cancelled: false}}, {sort: {createdAt: -1}});
     }
 });
