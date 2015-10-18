@@ -35,7 +35,7 @@ A P2P eCommerece/trading web-app
 
 1. [Make sure Node is downloaded](https://nodejs.org/en/download/).
 2. Install dependancies: `npm install`
-3. [Meteor is installed and up to date](https://www.meteor.com/install) or run: `gulp init`
+3. [Make sure Meteor is installed and up to date](https://www.meteor.com/install) or run: `gulp init`
 4. Run the app locally: `gulp serve`
 
 ## Structure
