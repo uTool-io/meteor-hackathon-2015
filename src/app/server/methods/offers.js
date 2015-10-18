@@ -5,19 +5,19 @@ Meteor.methods({
             selectedItemOwner: String,
             selectedItemOwnerName: String,
             selectedItemImage: String,
-            selectedItemTitle: String,
+            selectedItemTitle: String
         });
         check(offeredItem, {
             offeredItemId: String,
             offeredItemOwner: String,
             offeredItemOwnerName: String,
             offeredItemImage: String,
-            offeredItemTitle: String,
+            offeredItemTitle: String
         });
 
         var now = new Date(),
-            duplicateOffer = Offers.findOne({selectedItemId: selectedItem.selectedItemId, offeredItemId: offeredItem.offeredItemId, status: {cancelled: false}}),
-            user = Meteor.user();
+            user = Meteor.user(),
+            duplicateOffer = Offers.findOne({selectedItemId: selectedItem.selectedItemId, offeredItemId: offeredItem.offeredItemId, status: {cancelled: false}});
 
         if (!user) {
             throw new Meteor.Error('user-not-logged-in', 'You need to login to make an offer.');
@@ -42,9 +42,10 @@ Meteor.methods({
             };
         }
     },
-    acceptOffer: function (offerId) {
+    acceptOffer: function (offerId, offerAttributes) {
         check(offerId, String);
 
+        // @TODO: refactor to match new createOffer method
         var user = Meteor.user(),
             offer = Offers.findOne(offerId),
             offerStatus = typeof offer.cancelOffer,
@@ -63,18 +64,15 @@ Meteor.methods({
             throw new Meteor.Error('offer-trade-open', 'The offerId ' + offerId + ' is already open for trading in the Trades collection');
         } else {
             Offers.update(offerId, {$set: {openTrade: true}});
-
-            // Moved this call to client in offer event - click .accept.offer.button
-            // nested inside the acceptOffer call - when it passes, it calls createTrade
-            // if that passes, it routes to /trade
-            // you can remove this after reading
-            //Meteor.call('createTrade', offerId, function (error) {
-            //  console.error('createTrade method failed: ' + error.reason);
-            //});
         }
+    },
+    counterOffer: function (offerId, offerAttributes) {
+        // @TODO: create counterOffer method and event
     },
     cancelOffer: function (offerId, cancelAttributes) {
         check(offerId, String);
+
+        // @TODO: refactor to match new createOffer method
 
         var user = Meteor.user(),
             offer = Offers.findOne(offerId);

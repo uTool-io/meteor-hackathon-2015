@@ -8,6 +8,6 @@ Template.userItems.onCreated(function() {
 Template.userItems.helpers({
     userItems: function () {
         var userId = Meteor.user()._id;
-        return Items.find({ownerId: userId}, {sort: {submitted: -1}});
+        return Items.find({ownerId: userId}, {sort: {createdAt: -1}});
     }
 });

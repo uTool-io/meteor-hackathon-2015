@@ -29,7 +29,7 @@ Meteor.startup(function () {
             image: '/images/items/husam/lespaul.jpg',
             ownerId: husam._id,
             ownerName: husam.profile.name,
-            submitted: now,
+            createdAt: now,
             likes: 0
         });
 
@@ -38,7 +38,7 @@ Meteor.startup(function () {
             image: '/images/items/husam/amp.jpg',
             ownerId: husam._id,
             ownerName: husam.profile.name,
-            submitted: now,
+            createdAt: now,
             likes: 0
         });
 
@@ -47,7 +47,7 @@ Meteor.startup(function () {
             image: '/images/items/damir/bass.jpg',
             ownerId: damir._id,
             ownerName: damir.profile.name,
-            submitted: now,
+            createdAt: now,
             likes: 0
         });
 
@@ -56,7 +56,7 @@ Meteor.startup(function () {
             image: '/images/items/damir/acoustic.jpg',
             ownerId: damir._id,
             ownerName: damir.profile.name,
-            submitted: now,
+            createdAt: now,
             likes: 0
         });
     }
