@@ -1,8 +1,10 @@
 Meteor.publish('offers', function () {
-    return Offers.find();
+    //check(selector, Object);
+    return Offers.find({});
 });
 
 Meteor.publish('userOffers', function (userId) {
+    check(offerId, String);
     return Offers.find({createdBy: userId});
 });
 
