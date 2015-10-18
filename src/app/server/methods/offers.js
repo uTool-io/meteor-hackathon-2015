@@ -5,19 +5,19 @@ Meteor.methods({
             selectedItemOwner: String,
             selectedItemOwnerName: String,
             selectedItemImage: String,
-            selectedItemTitle: String,
+            selectedItemTitle: String
         });
         check(offeredItem, {
             offeredItemId: String,
             offeredItemOwner: String,
             offeredItemOwnerName: String,
             offeredItemImage: String,
-            offeredItemTitle: String,
+            offeredItemTitle: String
         });
 
         var now = new Date(),
-            duplicateOffer = Offers.findOne({selectedItemId: selectedItem.selectedItemId, offeredItemId: offeredItem.offeredItemId, status: {cancelled: false}}),
-            user = Meteor.user();
+            user = Meteor.user(),
+            duplicateOffer = Offers.findOne({selectedItemId: selectedItem.selectedItemId, offeredItemId: offeredItem.offeredItemId, status: {cancelled: false}});
 
         if (!user) {
             throw new Meteor.Error('user-not-logged-in', 'You need to login to make an offer.');

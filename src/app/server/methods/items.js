@@ -1,6 +1,9 @@
 Meteor.methods({
     postItem: function (itemAttributes) {
-        check(itemAttributes, Object);
+        check(itemAttributes, {
+            title: String,
+            image: String
+        });
 
         var now = new Date(),
             user = Meteor.user(),
@@ -18,7 +21,7 @@ Meteor.methods({
         if (duplicateItem) {
             throw new Meteor.Error('item-attributes-already-exist', 'One or more of your item attributes already exist.');
         } else {
-            var item = _.extend(_.pick(itemAttributes, 'title', 'image'), {
+            var item = _.extend(itemAttributes, {
                 ownerId: user._id,
                 ownerName: user.profile.name,
                 submitted: now,
@@ -27,7 +30,9 @@ Meteor.methods({
 
             var itemId = Items.insert(item);
 
-            return itemId;
+            return {
+                _id: itemId
+            };
         }
     },
     updateItem: function () {
