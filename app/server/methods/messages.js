@@ -10,9 +10,12 @@ Meteor.methods({
         }
         if (!messageAttributes.message) {
             throw new Meteor.Error('no-message', 'You need to write a message before sending.');
+        }
+        if (!messageAttributes.tradeId) {
+            throw new Meteor.Error('trade-id-undefined', 'This trade is no longer open, cannot send the message.');
         } else {
-            var message = _.extend(_.pick(messageAttributes, 'message', 'peerId'), {
-                ownerId: user._id,
+            var message = _.extend(_.pick(messageAttributes, 'message', 'tradeId'), {
+                senderId: user._id,
                 createdAt: now
             });
 

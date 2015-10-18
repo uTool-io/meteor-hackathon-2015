@@ -1,3 +1,7 @@
 <template name="messages">
-    messages module
+    <div class="messages module">
+        {{#each messages}}
+            {{> message}}
+        {{/each}}
+    </div>
 </template>
