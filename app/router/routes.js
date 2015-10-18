@@ -60,6 +60,16 @@ FlowRouter.route('/profile', {
     }
 });
 
+FlowRouter.route('/contacts', {
+    name: 'contacts',
+    action: function () {
+        BlazeLayout.render('layout', {
+            content: 'contacts'
+        });
+        GAnalytics.pageview();
+    }
+});
+
 FlowRouter.notFound = {
     action: function() {
         BlazeLayout.render('layout', {
