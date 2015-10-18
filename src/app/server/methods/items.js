@@ -24,7 +24,7 @@ Meteor.methods({
             var item = _.extend(itemAttributes, {
                 ownerId: user._id,
                 ownerName: user.profile.name,
-                submitted: now,
+                createdAt: now,
                 likes: 0
             });
 
