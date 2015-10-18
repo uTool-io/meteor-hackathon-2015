@@ -31,7 +31,9 @@
   "name": "quicktrade",
   "private": true,
   "scripts": {
-    "build": "gulp build",
+    "build": "gulp",
+    "init": "gulp init",
+    "serve": "gulp serve",
     "test": "gulp archive && mocha --reporter spec --timeout 5000"
   },
   "version": "1.0.0",
