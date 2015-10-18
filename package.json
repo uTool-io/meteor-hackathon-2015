@@ -66,6 +66,7 @@
     "gulp-git": "^1.5.0",
     "require-dir": "^0.3.0",
     "shelljs": "^0.5.3",
-    "wrench": "^1.5.8"
+    "wrench": "^1.5.8",
+    "writeson": "^1.0.1"
   }
 }

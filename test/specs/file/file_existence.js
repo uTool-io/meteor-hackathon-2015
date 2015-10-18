@@ -186,9 +186,7 @@ describe('Test files', function () {
 
                 switch (boolIfDir) {
                     case true:
-                        console.log(wrench.readdirSyncRecursive(pathOfFileWithExtOrDir, {
-                            exclude: /.meteor/g
-                        }));
+                        console.log(wrench.readdirSyncRecursive(pathOfFileWithExtOrDir));
                 }
             });
         });
