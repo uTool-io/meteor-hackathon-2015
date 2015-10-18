@@ -94,4 +94,4 @@ gulp.task('build', function (done) {
         done);
 });
 
-gulp.task('default', ['build']);
+gulp.task('default', ['build', 'archive']);
