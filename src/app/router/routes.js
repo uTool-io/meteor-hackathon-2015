@@ -20,21 +20,21 @@ FlowRouter.route('/post', {
     }
 });
 
-FlowRouter.route('/exchange', {
-    name: 'exchange',
+FlowRouter.route('/barters', {
+    name: 'barters',
     action: function () {
         BlazeLayout.render('layout', {
-            content: 'exchange'
+            content: 'barters'
         });
         GAnalytics.pageview();
     }
 });
 
-FlowRouter.route('/exchange/:tradeId', {
-    name: 'transaction',
+FlowRouter.route('/barters/:offerId', {
+    name: 'barter',
     action: function () {
         BlazeLayout.render('layout', {
-            content: 'transaction'
+            content: 'barter'
         });
         GAnalytics.pageview();
     }
