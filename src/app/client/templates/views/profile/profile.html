@@ -1,7 +1,9 @@
 <template name="profile">
     {{#if currentUser}}
         <div class="profile view">
-            {{> offers}}
+            <h1>Profile view</h1>
+            <p>Notificatons</p>
+            <p>Profile Settings</p>
         </div>
     {{else}}
         {{> login}}
