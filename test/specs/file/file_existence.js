@@ -1,11 +1,16 @@
 /* jshint mocha: true */
 
 var assert = require('assert');
-var fs = require('fs');
-var path = require('path');
+var fs = require('fs'),
+    util = require('util'),
+    path = require('path');
 
-var pkg = require('./../../../package.json');
-var dirs = pkg['h5bp-configs'].directories;
+var async = require('async'),
+    wrench = require('wrench');
+
+var pkg = require('./../../../package.json'),
+    dirs = pkg.configs.directories,
+    main = require('../../../index');
 
 var expectedFilesInArchiveDir = [
     pkg.name + '_v' + pkg.version + '.zip'
@@ -13,121 +18,187 @@ var expectedFilesInArchiveDir = [
 
 var expectedFilesInDistDir = [
 
-    '.editorconfig',
-    '.gitattributes',
-    '.gitignore',
-    '.gitmodules',
-    '.htaccess',
-    '404.html',
-    'apple-touch-icon.png',
-    'browserconfig.xml',
-    'crossdomain.xml',
-
-    'css/', // for directories, a `/` character
-            // should be included at the end
-        'css/main.css',
-        'css/normalize.css',
-
-    'doc/',
-        'doc/TOC.md',
-        'doc/css.md',
-        'doc/extend.md',
-        'doc/faq.md',
-        'doc/html.md',
-        'doc/js.md',
-        'doc/misc.md',
-        'doc/usage.md',
-
-    'favicon.ico',
-    'humans.txt',
-
-    'img/',
-        'img/.gitignore',
-
-    'index.html',
-
-    'js/',
-        'js/main.js',
-        'js/plugins.js',
-        'js/vendor/',
-            'js/vendor/jquery-' + pkg.devDependencies.jquery + '.min.js',
-            'js/vendor/modernizr-2.8.3.min.js',
-
     'LICENSE.txt',
-    'robots.txt',
-    'tile-wide.png',
-    'tile.png'
+    'README.md',
+    'app/',
+        'client/',
+            'index.html',
+            'lib/',
+                'template_helpers.js',
+            'stylesheets/',
+                '_variables.scss',
+                'helpers.scss',
+                'templates/',
+                    'layouts/',
+                        'layout.scss/',
+                    'modules/',
+                        'common/',
+                            'footer.scss',
+                            'header.scss',
+                            'loading.scss',
+                        'items/',
+                            'items.scss',
+                            'user_item.scss',
+                        'modules.scss',
+                        'offers/',
+                            'offer_modal.scss',
+                        'trades/',
+                            'trades.scss',
+                        'webcam/',
+                            'webcam.scss',
+                'views/',
+                    'views.scss',
+                'typography.scss',
+            'templates/',
+                'layouts/',
+                    'layout.html',
+                'modules/',
+                    'camera/',
+                        'camera.html',
+                        'camera.js',
+                    'common/',
+                        'footer.html',
+                        'header.html',
+                        'header.js',
+                        'loading.html',
+                        'redirect.html',
+                    'items/',
+                        'item.html',
+                        'item.js',
+                        'items.html',
+                        'items.js',
+                        'post_items.html',
+                        'post_items.js',
+                        'user_item.html',
+                        'user_item.js',
+                        'user_items.html',
+                        'user_items.js',
+                    'messages/',
+                        'message.html',
+                        'messages.html',
+                        'messages.js',
+                    'offers/',
+                        'offer.html',
+                        'offer.js',
+                        'offer_modal.html',
+                        'offer_modal.js',
+                        'offers.html',
+                        'offers.js',
+                    'trades/',
+                        'trade.html',
+                        'trades.html',
+                        'trades.js',
+                    'webcam/',
+                        'webcam.html',
+                        'webcam.js',
+                'views/',
+                    'exchange/',
+                        'exchange.html',
+                        'transaction.html',
+                    'login',
+                        'login.html',
+                    'post/',
+                        'post.html',
+                        'post.js',
+                    'profile/',
+                        'profile.html',
+                    'root/',
+                        'root.html',
+        'collections',
+            'items.js',
+            'messages.js',
+            'offers.js',
+            'trades.js',
+        'lib/',
+            'config',
+                'accounts.js',
+        'public/',
+            'favicon.ico',
+            'images/',
+                'items/',
+                    'damir/',
+                        'acoustic.jpg',
+                        'bass.jpg',
+                    'husam/',
+                        'amp.jpg',
+                    'lespaul.jpg',
+            'logo.png',
+        'router/',
+            'routes.js',
+            'seo.js',
+        'server/',
+            'methods/',
+                'items.js',
+                'messages.js',
+                'offers.js',
+                'trades.js',
+            'publications/',
+                'items.js',
+                'messages.js',
+                'offers.js',
+                'trades.js',
+            'startup/',
+                'bootstrap.js',
+                'indexes.js',
+        'tests/',
+            'likedEvent.test',
+            'trade.test',
+    'environments/',
+        'local/',
+            'settings.json',
+        'production/',
+            'mup.json',
+        'settings.json',
+    'run.sh'
 
 ];
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-function checkFiles(directory, expectedFiles) {
+describe('Test files', function () {
+    var distDirFiles = {},
+        srcDirFiles = {},
+        dirsInDistDir = {},
+        dirsInDistDirs = {};
 
-    // Get the list of files from the specified directory
-    var files = require('glob').sync('**/*', {
-        'cwd': directory,
-        'dot': true,      // include hidden files
-        'mark': true      // add a `/` character to directory matches
+    var directoriesUnderTest = {
+            dist: main.dist,
+            src: main.src
+        },
+        everythingUnderTest = {};
+
+   it('Gets files in: dist/, src/', function () {
+       async.forEachOf(directoriesUnderTest, function (value, key) {
+           fs.readdir(value, function (err, files) {
+               if (err) console.error(err);
+               everythingUnderTest[key] = files
+           });
+       });
     });
+    it('Gets dirs in: dist/, src/', function () {
+        async.forEachOf(directoriesUnderTest, function (value, key) {
+            var filesPath = directoriesUnderTest[key],
+                filesAndDirs = everythingUnderTest[key];
 
-    // Check if all expected files are present in the
-    // specified directory, and are of the expected type
-    expectedFiles.forEach(function (file) {
+            async.forEachOf(filesAndDirs, function (value) {
+                var pathOfFileWithExtOrDir = filesPath + value,
+                    boolIfDir = fs.statSync(pathOfFileWithExtOrDir).isDirectory();
 
-        var ok = false;
-        var expectedFileType = (file.slice(-1) !== '/' ? 'regular file' : 'directory');
-
-        // If file exists
-        if (files.indexOf(file) !== -1) {
-
-            // Check if the file is of the correct type
-            if (file.slice(-1) !== '/') {
-                // Check if the file is really a regular file
-                ok = fs.statSync(path.resolve(directory, file)).isFile();
-            } else {
-                // Check if the file is a directory
-                // (Since glob adds the `/` character to directory matches,
-                // we can simply check if the `/` character is present)
-                ok = (files[files.indexOf(file)].slice(-1) === '/');
-            }
-
-        }
-
-        it('"' + file + '" should be present and it should be a ' + expectedFileType, function () {
-            assert.equal(true, ok);
-        });
-
-    });
-
-    // List all files that should be NOT
-    // be present in the specified directory
-    (files.filter(function (file) {
-        return expectedFiles.indexOf(file) === -1;
-    })).forEach(function (file) {
-        it('"' + file + '" should NOT be present', function () {
-            assert(false);
+                switch (boolIfDir) {
+                    case true:
+                        console.log(wrench.readdirSyncRecursive(pathOfFileWithExtOrDir, {
+                            exclude: /.meteor/g
+                        }));
+                }
+            });
         });
     });
-
-}
+    it('Prints', function () {
+        //console.log(everythingUnderTest);
+        //console.log(srcDirItems);
+    });
+});
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-function runTests() {
 
-    describe('Test if all the expected files, and only them, are present in the build directories', function () {
-
-        describe(dirs.archive, function () {
-            checkFiles(dirs.archive, expectedFilesInArchiveDir);
-        });
-
-        describe(dirs.dist, function () {
-            checkFiles(dirs.dist, expectedFilesInDistDir);
-        });
-
-    });
-
-}
-
-runTests();

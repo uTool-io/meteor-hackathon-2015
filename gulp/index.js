@@ -1,7 +1,8 @@
 var fs = require('fs');
 var path = require('path');
 
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    shell = require('shelljs');
 
 // Load all gulp plugins automatically
 // and attach them to the `plugins` object
@@ -12,24 +13,16 @@ var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 
 var pkg = require('../package.json');
-var dirs = pkg["configs"].directories;
+var dirs = pkg.configs.directories;
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
 // ---------------------------------------------------------------------
 
-gulp.task('copy', function () {
-    return gulp.src([
+gulp.task('copy', ['copy:app']);
 
-        // Copy all files
-        dirs.src + '/**/*',
-
-    ], {
-
-        // Include hidden files by default
-        dot: true
-
-    }).pipe(gulp.dest(dirs.dist));
+gulp.task('copy:app', function () {
+    return gulp.src(['src/**/*'], { dot:true }).pipe(gulp.dest('dist'));
 });
 
 gulp.task('archive:create_archive_dir', function () {
@@ -71,17 +64,14 @@ gulp.task('archive:zip', function (done) {
 
 });
 
-gulp.task('clean', function (done) {
-    require('del')([
-        dirs.archive,
-        dirs.dist
-    ], done);
+gulp.task('clean', function () {
+    shell.exec('rm -rf dist && rm -rf archive');
 });
 
 gulp.task('lint:js', function () {
     return gulp.src([
         'gulpfile.js',
-        dirs.src + '/js/*.js',
+        dirs.src + 'app/**/*.js',
         dirs.test + '/*.js'
     ]).pipe(plugins.jscs())
       .pipe(plugins.jshint())
@@ -96,7 +86,6 @@ gulp.task('lint:js', function () {
 
 gulp.task('archive', function (done) {
     runSequence(
-        'build',
         'archive:create_archive_dir',
         'archive:zip',
     done);
@@ -104,8 +93,9 @@ gulp.task('archive', function (done) {
 
 gulp.task('build', function (done) {
     runSequence(
-        ['clean', 'copy', 'lint:js'],
+        ['copy', 'lint:js'],
         done);
 });
 
-gulp.task('default', ['build', 'archive']);
+gulp.task('default', ['clean', 'build', 'archive']);
+
