@@ -1,13 +1,15 @@
 @import '../../../_variables';
 
 .ui.footer.module {
+  padding: 0;
   border-radius: 0;
   background-color: $gray-darker;
-  a {
-    i {
+
+  .item {
+
+    .icon {
       color: $gray-light;
       font-size: $space-base + $space-tiny;
     }
   }
-
 }

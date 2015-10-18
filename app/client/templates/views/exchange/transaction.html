@@ -1,7 +1,7 @@
 <template name="transaction">
     {{#if currentUser}}
         <div class="transaction view">
-            Show details about the tradeId transaction.
+            {{> tradeDetails}}
             {{> messages}}
         </div>
     {{else}}
