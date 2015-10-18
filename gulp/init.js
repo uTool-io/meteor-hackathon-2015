@@ -21,7 +21,7 @@ gulp.task('meteor', function () {
 });
 
 gulp.task('submodules', function () {
-    git.updateSubmodule();
+    shell.exec('git submodule update');
 });
 
 gulp.task('serve', function () {
