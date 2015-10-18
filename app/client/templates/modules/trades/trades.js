@@ -1,6 +1,7 @@
 Template.trades.onCreated(function () {
     var self = this;
     self.autorun(function () {
+        // @TODO subscribe by userId
         self.subscribe('items');
         self.subscribe('offers');
         self.subscribe('trades');

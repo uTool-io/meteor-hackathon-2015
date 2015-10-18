@@ -131,6 +131,7 @@ environments/       # Environments folder
   * [mdg:camera](https://github.com/meteor/mobile-packages/tree/master/packages/mdg:camera)
 * Development
   * [fourseven:scss](https://github.com/fourseven/meteor-scss)
+  * [momentjs:moment](https://github.com/moment/moment)
   * [msavin:mongol](https://github.com/msavin/Mongol)
 
 ## License

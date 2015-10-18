@@ -5,3 +5,7 @@ Template.registerHelper('offerModalToggled', function () {
 Template.registerHelper('acceptedPhoto', function () {
     return Session.get('acceptedPhoto');
 });
+
+Template.registerHelper('formatDate', function (date) {
+    return moment(date).fromNow();
+});
