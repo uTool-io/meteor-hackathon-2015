@@ -1,2 +1,6 @@
-.DS_Store
+archive
+node_modules
+archive-mht-08.17.15
 .idea
+.DS_Store
+**/**/.DS_Store
