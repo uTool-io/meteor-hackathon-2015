@@ -3,7 +3,7 @@ Meteor.publish('items', function () {
 });
 
 Meteor.publish('userItems', function (userId) {
-    return Items.find({createdBy: userId});
+    return Items.find({ownerId: userId});
 });
 
 Meteor.publish('item', function (itemId) {
