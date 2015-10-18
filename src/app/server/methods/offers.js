@@ -1,11 +1,22 @@
 Meteor.methods({
-    createOffer: function (selectedItemId, selectedItemOwnerId, offeredItemId) {
-        check(selectedItemId, String);
-        check(selectedItemOwnerId, String);
-        check(offeredItemId, String);
+    createOffer: function (selectedItem, offeredItem) {
+        check(selectedItem, {
+            selectedItemId: String,
+            selectedItemOwner: String,
+            selectedItemOwnerName: String,
+            selectedItemImage: String,
+            selectedItemTitle: String,
+        });
+        check(offeredItem, {
+            offeredItemId: String,
+            offeredItemOwner: String,
+            offeredItemOwnerName: String,
+            offeredItemImage: String,
+            offeredItemTitle: String,
+        });
 
         var now = new Date(),
-            duplicateOffer = Offers.findOne({selectedItemId: selectedItemId, offeredItemId: offeredItemId}),
+            duplicateOffer = Offers.findOne({selectedItemId: selectedItem.selectedItemId, offeredItemId: offeredItem.offeredItemId, status: {cancelled: false}}),
             user = Meteor.user();
 
         if (!user) {
@@ -14,15 +25,21 @@ Meteor.methods({
         if (duplicateOffer) {
             throw new Meteor.Error('this-offer-already-exists', 'This offer was already made.');
         } else {
-            Offers.insert({
-                selectedItemId: selectedItemId,
-                selectedItemOwner: selectedItemOwnerId,
-                offeredItemId: offeredItemId,
-                offeredBy: user._id,
-                offeredAt: now,
-                openTrade: false,
-                cancelOffer: 'undefined'
+            var offer = _.extend(selectedItem, offeredItem, {
+                createdBy: user._id,
+                createdAt: now,
+                status: {
+                    pending: true,
+                    accepted: false,
+                    cancelled: false
+                }
             });
+
+            var offerId = Offers.insert(offer);
+
+            return {
+                _id: offerId
+            };
         }
     },
     acceptOffer: function (offerId) {
