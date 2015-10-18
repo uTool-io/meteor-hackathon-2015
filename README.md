@@ -19,15 +19,13 @@ A P2P eCommerece/trading web-app
 
 ### TODO
 
-TODO
-
-- [x] METEOR - FE -- [https://github.com/amazingBastard/meteor-hackathon-2015](https://github.com/amazingBastard/meteor-hackathon-2015)
-- [x] WITHPULP REPO -- [https://github.com/withpulp/quicktrade](https://github.com/withpulp/quicktrade)
+- [x] METEOR - [https://github.com/amazingBastard/meteor-hackathon-2015](https://github.com/amazingBastard/meteor-hackathon-2015)
+- [x] PRIVATE REPO - [https://github.com/withpulp/quicktrade](https://github.com/withpulp/quicktrade)
 - [x] VAGRANT CONTAINER
 - [ ] METEOR PACKAGE
 - [ ] NPM PACKAGE
 - [ ] GULP:INIT 
-- [ ] DOCUMENTATION -- WIP -- [https://github.com/withpulp/quicktrade/wiki](https://github.com/withpulp/quicktrade/wiki)
+- [ ] DOCUMENTATION -  [https://github.com/withpulp/quicktrade/wiki](https://github.com/withpulp/quicktrade/wiki)
 
 ## Dependancies
 
@@ -92,36 +90,13 @@ TODO
 
 ### Requirements
 
-Make sure [Meteor is installed and up to date](https://www.meteor.com/install) or run:
+#### Development Installation
 
-```
-curl https://install.meteor.com/ | sh
-```
-
-### Run Locally
-
-```
-git clone git@github.com:uTool-io/mtr-hackathon.git
-cd mtr-hackathon
-```
-
-Run the following to get the bash file to work:
-
-```
-chmod +x ./run.sh
-```
-
-Now you can start the app with the following command:
-
-```
-./run.sh
-```
-
-The app should now be running on:
-
-```
-http://localhost:3000
-```
+1. [Make sure Node is downloaded](https://nodejs.org/en/download/).
+2. Install dependancies: `npm install`
+3. Then run: `npm init`
+4. [Meteor is installed and up to date](https://www.meteor.com/install) or run: `gulp init`
+5. Run the app locally: `gulp serve`
 
 ## Structure
 

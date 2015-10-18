@@ -34,7 +34,7 @@
     "build": "gulp build",
     "test": "gulp archive && mocha --reporter spec --timeout 5000"
   },
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A P2P eCommerece/trading web-app",
   "main": "index.js",
   "directories": {
