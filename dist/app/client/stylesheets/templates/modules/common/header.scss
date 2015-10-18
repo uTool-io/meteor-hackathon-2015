@@ -1,0 +1,39 @@
+@import '../../../_variables';
+
+.header.module {
+  position: relative;
+  display: inline-block;
+  width: $full;
+  margin: 0;
+  padding: $space-tiny;
+  background-color: $primary-color;
+  color: $light;
+
+  .ui.header {
+    position: relative;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-base;
+    text-decoration: none;
+
+    @media (min-width: $tablet-width) {
+      display: inline-block;
+    }
+
+    .ui.image {
+      margin: 0;
+      width: $space-large + $space-tiny;
+      border: $space-atomic solid $light;
+    }
+  }
+
+  .logout.button {
+    float: right;
+    margin: 0;
+    border-radius: 0;
+    border: $space-atomic solid $light;
+    background-color: transparent;
+    color: $light;
+  }
+}

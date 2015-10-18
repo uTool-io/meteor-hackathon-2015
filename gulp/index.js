@@ -18,6 +18,20 @@ var dirs = pkg["configs"].directories;
 // | Helper tasks                                                      |
 // ---------------------------------------------------------------------
 
+gulp.task('copy', function () {
+    return gulp.src([
+
+        // Copy all files
+        dirs.src + '/**/*',
+
+    ], {
+
+        // Include hidden files by default
+        dot: true
+
+    }).pipe(gulp.dest(dirs.dist));
+});
+
 gulp.task('archive:create_archive_dir', function () {
     fs.mkdirSync(path.resolve(dirs.archive), '0755');
 });
@@ -90,7 +104,7 @@ gulp.task('archive', function (done) {
 
 gulp.task('build', function (done) {
     runSequence(
-        ['clean', 'lint:js'],
+        ['clean', 'copy', 'lint:js'],
         done);
 });
 

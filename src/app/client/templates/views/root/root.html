@@ -1,0 +1,10 @@
+<template name="root">
+    {{#if currentUser}}
+        <div class="root view">
+            {{> items}}
+            {{> cameraMdg}}
+        </div>
+    {{else}}
+        {{> login}}
+    {{/if}}
+</template>

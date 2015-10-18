@@ -4,7 +4,7 @@ var assert = require('assert');
 var fs = require('fs');
 var path = require('path');
 
-var pkg = require('./../package.json');
+var pkg = require('./../../../package.json');
 var dirs = pkg['h5bp-configs'].directories;
 
 var expectedFilesInArchiveDir = [
@@ -16,6 +16,7 @@ var expectedFilesInDistDir = [
     '.editorconfig',
     '.gitattributes',
     '.gitignore',
+    '.gitmodules',
     '.htaccess',
     '404.html',
     'apple-touch-icon.png',

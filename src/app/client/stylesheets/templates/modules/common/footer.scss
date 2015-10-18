@@ -1,0 +1,13 @@
+@import '../../../_variables';
+
+.ui.footer.module {
+  border-radius: 0;
+  background-color: $gray-darker;
+  a {
+    i {
+      color: $gray-light;
+      font-size: $space-base + $space-tiny;
+    }
+  }
+
+}
