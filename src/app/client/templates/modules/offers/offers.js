@@ -1,7 +1,5 @@
 Template.offers.onCreated(function () {
-    var self = this,
-        userId = Meteor.user()._id,
-        selector = {createdBy: userId, selectedItemOwner: userId};
+    var self = this;
     self.autorun(function () {
         self.subscribe('items');
         self.subscribe('offers');
