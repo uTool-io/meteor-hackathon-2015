@@ -4,7 +4,10 @@
             <img src="{{selectedItemImage}}">
         </div>
         <div class="content">
-            <div class="header">{{selectedItemTitle}}</div>
+            <h2 class="header">{{selectedItemTitle}}</h2>
+            <div class="meta">
+                <p class="date">Offer made {{formatDate createdAt}}</p>
+            </div>
             <div class="description">
                 {{#if offerOwner}}
                     <p>You want this.</p>
