@@ -1,5 +1,5 @@
 <template name="offer">
-    <div class="item" id="{{_id}}">
+    <a class="item" id="{{_id}}" href="/barters/{{_id}}">
         <div class="ui tiny image">
             <img src="{{selectedItemImage}}">
         </div>
@@ -9,5 +9,5 @@
                 <p>{{offeredItemOwnerName}} wants this.</p>
             </div>
         </div>
-    </div>
+    </a>
 </template>
