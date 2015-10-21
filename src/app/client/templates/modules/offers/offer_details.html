@@ -1,5 +1,9 @@
 <template name="offerDetails">
-    <div class="offer details module">
-        offer details module
-    </div>
+    {{#if Template.subscriptionsReady}}
+        <div class="offer details module">
+            <h1>{{offer.createdBy}}</h1>
+        </div>
+    {{else}}
+        {{> loading}}
+    {{/if}}
 </template>
