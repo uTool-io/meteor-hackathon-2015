@@ -6,7 +6,11 @@
         <div class="content">
             <div class="header">{{selectedItemTitle}}</div>
             <div class="description">
-                <p>{{offeredItemOwnerName}} wants this.</p>
+                {{#if offerOwner}}
+                    <p>You want this.</p>
+                {{else}}
+                    <p>{{offeredItemOwnerName}} wants this.</p>
+                {{/if}}
             </div>
         </div>
     </a>

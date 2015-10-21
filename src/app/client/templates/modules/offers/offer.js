@@ -52,3 +52,16 @@ Template.offer.events({
         });
     }
 });
+
+Template.offer.helpers({
+    offerOwner: function() {
+        var userId = Meteor.user()._id,
+            ownerId = this.createdBy;
+
+        if (userId === ownerId) {
+            return true
+        } else {
+            return false
+        }
+    }
+});
