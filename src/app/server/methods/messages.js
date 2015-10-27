@@ -11,13 +11,13 @@ Meteor.methods({
         if (!messageAttributes.message) {
             throw new Meteor.Error('no-message', 'You need to write a message before sending.');
         }
-        if (!messageAttributes.tradeId) {
-            throw new Meteor.Error('trade-id-undefined', 'This trade is no longer open, cannot send the message.');
+        if (!messageAttributes.offerId) {
+            throw new Meteor.Error('trade-id-undefined', 'This offer is no longer open, cannot send the message.');
         }
         if (!messageAttributes.receiverId) {
             throw new Meteor.Error('receiver-id-undefined', 'The user you\'re attempting to message does not exist.');
         } else {
-            var message = _.extend(_.pick(messageAttributes, 'message', 'tradeId', 'receiverId', 'receiverName'), {
+            var message = _.extend(_.pick(messageAttributes, 'message', 'offerId', 'receiverId', 'receiverName'), {
                 senderId: user._id,
                 senderName: user.profile.name,
                 createdAt: now
