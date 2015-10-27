@@ -17,8 +17,9 @@ Meteor.methods({
         if (!messageAttributes.receiverId) {
             throw new Meteor.Error('receiver-id-undefined', 'The user you\'re attempting to message does not exist.');
         } else {
-            var message = _.extend(_.pick(messageAttributes, 'message', 'tradeId', 'receiverId'), {
+            var message = _.extend(_.pick(messageAttributes, 'message', 'tradeId', 'receiverId', 'receiverName'), {
                 senderId: user._id,
+                senderName: user.profile.name,
                 createdAt: now
             });
 
