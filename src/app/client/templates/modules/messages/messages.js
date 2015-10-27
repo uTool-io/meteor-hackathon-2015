@@ -13,6 +13,6 @@ Template.messages.helpers({
     messages: function () {
         var userId = Meteor.user()._id;
 
-        return Messages.find({senderId: userId}, {sort: {createdAt: -1}});
+        return Messages.find({$or: [ { senderId: userId }, { receiverId: userId} ]}, {sort: {createdAt: -1}});
     }
 });
