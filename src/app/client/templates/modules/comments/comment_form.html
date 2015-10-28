@@ -1,14 +1,14 @@
-<template name="messageForm">
+<template name="commentForm">
     {{#if currentUser}}
-        <form class="ui message form">
+        <form class="ui comment form">
             <div class="field">
-                <textarea class="message"></textarea>
+                <textarea class="comment"></textarea>
             </div>
             <button type="submit" class="ui primary icon submit button">
                 <i class="icon edit"></i> Send Message
             </button>
         </form>
     {{else}}
-        <p class="alert">Please login to send a message</p>
+        <p class="alert">Please login to post a comment.</p>
     {{/if}}
 </template>

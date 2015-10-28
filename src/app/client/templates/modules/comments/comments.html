@@ -1,0 +1,9 @@
+<template name="comments">
+    <div class="ui comments module">
+        <h2 class="ui dividing header">Comments</h2>
+        {{#each comments}}
+            {{> comment}}
+        {{/each}}
+        {{> commentForm}}
+    </div>
+</template>
