@@ -9,7 +9,12 @@ Template.messageForm.events({
                 message: $message.val()
             };
 
-        // @TODO: offerId determines where messages will show
-        console.log(messageAttributes);
+        Meteor.call('sendMessage', messageAttributes, function(error) {
+           if (error) {
+               return console.error(error.reason);
+           } else {
+               $message.val('');
+           }
+        });
     }
 });
