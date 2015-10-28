@@ -1,10 +1,8 @@
 Meteor.methods({
     sendMessage: function (messageAttributes) {
         check(messageAttributes, {
-            message: String,
             offerId: String,
-            receiverId: String,
-            receiverName: String
+            message: String
         });
 
         var now = new Date(),
@@ -19,11 +17,8 @@ Meteor.methods({
         }
         if (!messageAttributes.message) {
             throw new Meteor.Error('no-message', 'You need to write a message before sending.');
-        }
-        if (!messageAttributes.receiverId) {
-            throw new Meteor.Error('receiver-id-undefined', 'The user you\'re attempting to message does not exist.');
         } else {
-            var message = _.extend(_.pick(messageAttributes, 'message', 'offerId', 'receiverId', 'receiverName'), {
+            var message = _.extend(_.pick(messageAttributes, 'offerId', 'message'), {
                 senderId: user._id,
                 senderName: user.profile.name,
                 createdAt: now
