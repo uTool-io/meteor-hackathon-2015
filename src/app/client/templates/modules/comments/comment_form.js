@@ -3,7 +3,7 @@ Template.commentForm.events({
         event.preventDefault();
 
         var offerId = FlowRouter.getParam('offerId'),
-            $comment = $(event.target).find('.field .comment'),
+            $comment = $(event.target).find('.field .input'),
             commentAttributes = {
                 offerId: offerId,
                 comment: $comment.val()
