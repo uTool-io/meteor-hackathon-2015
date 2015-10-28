@@ -1,6 +1,11 @@
 Meteor.methods({
     sendMessage: function (messageAttributes) {
-        check(messageAttributes, Object);
+        check(messageAttributes, {
+            message: String,
+            offerId: String,
+            receiverId: String,
+            receiverName: String
+        });
 
         var now = new Date(),
             user = Meteor.user();
