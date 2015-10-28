@@ -8,16 +8,17 @@ Meteor.methods({
         });
 
         var now = new Date(),
-            user = Meteor.user();
+            user = Meteor.user(),
+            offer = Offers.findOne(messageAttributes.offerId);
 
         if (!user) {
             throw new Meteor.Error('user-not-logged-in', 'You need to login to send a message.');
         }
+        if (!offer) {
+            throw new Meteor.Error('trade-id-undefined', 'This offer is no longer open, cannot send the message.');
+        }
         if (!messageAttributes.message) {
             throw new Meteor.Error('no-message', 'You need to write a message before sending.');
-        }
-        if (!messageAttributes.offerId) {
-            throw new Meteor.Error('trade-id-undefined', 'This offer is no longer open, cannot send the message.');
         }
         if (!messageAttributes.receiverId) {
             throw new Meteor.Error('receiver-id-undefined', 'The user you\'re attempting to message does not exist.');
