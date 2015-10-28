@@ -11,9 +11,8 @@ Template.messages.onCreated(function () {
 
 Template.messages.helpers({
     messages: function () {
-        var userId = Meteor.user()._id,
-            offerId = FlowRouter.getParam('offerId');
+        var offerId = FlowRouter.getParam('offerId');
 
-        return Messages.find({$or: [ { senderId: userId }, { receiverId: userId} ], offerId: offerId}, {sort: {createdAt: -1}});
+        return Messages.find({offerId: offerId}, {sort: {createdAt: -1}});
     }
 });
