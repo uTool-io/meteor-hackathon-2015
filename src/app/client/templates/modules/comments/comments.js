@@ -14,5 +14,10 @@ Template.comments.helpers({
         var offerId = FlowRouter.getParam('offerId');
 
         return Comments.find({offerId: offerId}, {sort: {createdAt: -1}});
+    },
+    commentsCount: function() {
+        var offerId = FlowRouter.getParam('offerId');
+
+        return Comments.find({offerId: offerId}).count();
     }
 });

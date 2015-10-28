@@ -1,12 +1,12 @@
 <template name="comments">
     <div class="ui comments module">
         <h2 class="ui dividing header">Comments</h2>
-        {{#if noComments}}
-            <p>There are no comments</p>
-        {{else}}
+        {{#if commentsCount}}
             {{#each comments}}
                 {{> comment}}
             {{/each}}
+        {{else}}
+            <p class="alert">There are no comments</p>
         {{/if}}
         {{> commentForm}}
     </div>
