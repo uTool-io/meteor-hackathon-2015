@@ -1,0 +1,22 @@
+<template name="item">
+    <div class="item column">
+        <div class="ui fluid card" id="{{_id}}">
+            <div class="content">
+                <h2 class="title">{{title}}</h2>
+
+                <div class="meta">
+                    <p class="owner">Offered by <a class="name" href="/profile">{{ownerName}}</a></p>
+                </div>
+            </div>
+            <div class="image">
+                <img src="{{image}}"/>
+            </div>
+            <div class="content">
+                <button class="fluid ui button" id="toggleOfferModal">Make An Offer <i class="arrow right icon"></i></button>
+            </div>
+        </div>
+        {{#if offerModalToggled}}
+            {{> offerModal}}
+        {{/if}}
+    </div>
+</template>

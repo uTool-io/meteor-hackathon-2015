@@ -1,0 +1,9 @@
+<template name="barters">
+    {{#if currentUser}}
+        <div class="barters view">
+            {{> offers}}
+        </div>
+    {{else}}
+        {{> login}}
+    {{/if}}
+</template>

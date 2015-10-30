@@ -1,0 +1,9 @@
+<template name="messages">
+    <div class="ui comments messages module">
+        <h2 class="ui dividing header">Messages</h2>
+        {{> message}}
+        {{#each messages}}
+            {{> message}}
+        {{/each}}
+    </div>
+</template>

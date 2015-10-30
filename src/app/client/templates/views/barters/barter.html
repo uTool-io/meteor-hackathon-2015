@@ -1,0 +1,10 @@
+<template name="barter">
+    {{#if currentUser}}
+        <div class="barter view">
+            {{> tradeDetails}}
+            {{> messages}}
+        </div>
+    {{else}}
+        {{> login}}
+    {{/if}}
+</template>
