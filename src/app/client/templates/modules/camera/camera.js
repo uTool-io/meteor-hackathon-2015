@@ -20,14 +20,18 @@ Template.cameraMDG.onRendered(function () {
 });
 
 Template.cameraMDG.events({
-    'click #camera-event': function () {
+    'click #camera-event': function (event) {
+        event.preventDefault();
+
         getPicture({
             width: 350,
             height: 350,
             quality: 75
         });
     },
-    'click #library-event': function () {
+    'click #library-event': function (event) {
+        event.preventDefault();
+
         if (Meteor.isCordova) {
             getPicture({
                 width: 350,
@@ -44,7 +48,7 @@ Template.cameraMDG.events({
 
         Session.set('cameraSnap', null);
     },
-    'click .accept.photo.button': function (event, template) {
+    'click .accept.photo.button': function (event) {
         event.preventDefault();
 
         var snapData = Session.get('cameraSnap');
