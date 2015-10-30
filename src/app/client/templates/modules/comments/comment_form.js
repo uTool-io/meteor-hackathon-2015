@@ -9,6 +9,13 @@ Template.commentForm.events({
                 comment: $comment.val()
             };
 
+        // @TODO: getReceiver() =>
+        // if currentUser !== selectedItemOwner
+        //   receiverId = selectedItemOwner
+        // else
+        //   if currentUser !== offeredItemOwner
+        //      receiverId = offeredItemOwner
+
         Meteor.call('postComment', commentAttributes, function(error) {
            if (error) {
                return console.error(error.reason);
