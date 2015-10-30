@@ -1,17 +1,20 @@
 <template name="offer">
-    <div class="ui stackable two column offer grid" id="{{_id}}">
-        <div class="offered item column" id="{{offeredItemId}}">
-            <h2 class="title">{{offeredItemOwnerName}}'s offerings</h2>
-            <img class="ui image" src="{{offeredItemImage}}"/>
+    <a class="item" id="{{_id}}" href="/barters/{{_id}}">
+        <div class="ui tiny image">
+            <img src="{{selectedItemImage}}">
         </div>
-        <div class="selected item column" id="{{selectedItemId}}">
-            <h2 class="title">For your</h2>
-            <img class="ui image" src="{{selectedItemImage}}"/>
+        <div class="content">
+            <h2 class="header">{{selectedItemTitle}}</h2>
+            <div class="meta">
+                <p class="date">Offer made {{formatDate createdAt}}</p>
+            </div>
+            <div class="description">
+                {{#if offerOwner}}
+                    <p>You want this.</p>
+                {{else}}
+                    <p>{{offeredItemOwnerName}} wants this.</p>
+                {{/if}}
+            </div>
         </div>
-        <div class="ui two buttons">
-            <button class="ui negative cancel offer button">Cancel</button>
-            <!--<button class="ui counter offer button">Counter</button>-->
-            <button class="ui positive accept offer button">Accept</button>
-        </div>
-    </div>
+    </a>
 </template>
