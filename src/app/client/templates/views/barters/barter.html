@@ -1,9 +1,13 @@
 <template name="barter">
     {{#if currentUser}}
-        <div class="barter view">
-            {{> offerDetails}}
-            {{> comments}}
-        </div>
+        {{#if authorized}}
+            <div class="barter view">
+                {{> offerDetails}}
+                {{> comments}}
+            </div>
+        {{else}}
+            {{> redirect}}
+        {{/if}}
     {{else}}
         {{> login}}
     {{/if}}
