@@ -8,16 +8,21 @@ Notifications.allow({
 });
 
 createCommentNotification = function(comment) {
-    var offer = Comments.findOne(offer.offerId);
 
     // @TODO: getReceiver() =>
+
+    var now = new Date(),
+        user = Meteor.user(),
+        offer = Offers.findOne(offer.offerId);
+
+    if (currentUser !== selectedItemOwner) {
+        receiverId =
+        }
     // if currentUser/senderId !== selectedItemOwner
     //   receiverId = selectedItemOwner
     // else
     //   if currentUser/senderId !== offeredItemOwner
     //      receiverId = offeredItemOwner
-
-    if (comment.senderId !== offer.selectedItemOwner || comment.senderId !== offer.selectedItemOwner) {
 
     Notifications.insert({
 
