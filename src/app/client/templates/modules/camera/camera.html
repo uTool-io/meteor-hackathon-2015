@@ -1,31 +1,34 @@
-<template name="cameraMdg">
-  <h1>MDG:Camera</h1>
-
-  {{> cameraEvent}}
-  {{> libraryEvent}}
-  {{> img}}
+<template name="cameraMDG">
+    <div class="camera module">
+        <button class="ui primary button" id="camera-event">Camera Event</button>
+        <button class="ui secondary button" id="library-event">Library Event</button>
+        {{#if image}}
+            <div class="photo preview">
+                <img class="ui centered fluid image" src="{{image}}">
+                <div class="ui buttons">
+                    <button class="ui retake photo button">Retake Photo</button>
+                    <div class="or"></div>
+                    <button class="ui positive accept photo button">Accept Photo</button>
+                </div>
+            </div>
+        {{/if}}
+    </div>
 </template>
 
 <template name="cameraEvent">
-  <div>
-    <p>Camera</p>
-    <button id="camera-event">Click Me</button>
-  </div>
+    <button class="ui primary button" id="camera-event">Camera Event</button>
 </template>
 
 <template name="libraryEvent">
-  <div>
-    <p>Library</p>
-    <button id="library-event">Click Me</button>
-  </div>
+    <button class="ui secondary button" id="library-event">Library Event</button>
 </template>
 
 <template name="img">
-  <div>
-    {{#if img}}
-      <img src="{{img}}" alt="">
-    {{else}}
-      <p>No image yet.</p>
-    {{/if}}
-  </div>
+    <div>
+        {{#if img}}
+            <img src="{{img}}" alt="">
+        {{else}}
+            <p>No image yet.</p>
+        {{/if}}
+    </div>
 </template>

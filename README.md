@@ -35,8 +35,11 @@ A P2P eCommerece/trading web-app
 
 1. [Make sure Node is downloaded](https://nodejs.org/en/download/).
 2. Install dependancies: `npm install`
-3. [Meteor is installed and up to date](https://www.meteor.com/install) or run: `gulp init`
-4. Run the app locally: `gulp serve`
+3. [Make sure Meteor is installed and up to date](https://www.meteor.com/install) or run: `npm run init`
+4. Run the app locally: `npm run serve`
+
+#### Issues
+
 
 ## Structure
 
@@ -112,7 +115,6 @@ environments/       # Environments folder
 * UI and UX
   * [semantic:ui-css](https://github.com/Semantic-Org/Semantic-UI-CSS)
   * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css/)
-  * [benjick:webcam](https://github.com/benjick/meteor-webcam)
   * [mdg:camera](https://github.com/meteor/mobile-packages/tree/master/packages/mdg:camera)
 * Development
   * [fourseven:scss](https://github.com/fourseven/meteor-scss)

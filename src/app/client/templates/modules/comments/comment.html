@@ -1,15 +1,15 @@
-<template name="message">
-    <div class="comment message">
+<template name="comment">
+    <div class="comment">
         <a class="avatar">
             <img src="http://placehold.it/100x100">
         </a>
         <div class="content">
-            <a class="author">Name</a>
+            <a class="author">{{senderName}}</a>
             <div class="metadata">
-                <span class="date">Today at 5:42PM</span>
+                <span class="date">{{formatDate createdAt}}</span>
             </div>
             <div class="text">
-                Message text goes here.
+                {{comment}}
             </div>
         </div>
     </div>
