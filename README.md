@@ -115,7 +115,6 @@ environments/       # Environments folder
 * UI and UX
   * [semantic:ui-css](https://github.com/Semantic-Org/Semantic-UI-CSS)
   * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css/)
-  * [benjick:webcam](https://github.com/benjick/meteor-webcam)
   * [mdg:camera](https://github.com/meteor/mobile-packages/tree/master/packages/mdg:camera)
 * Development
   * [fourseven:scss](https://github.com/fourseven/meteor-scss)
