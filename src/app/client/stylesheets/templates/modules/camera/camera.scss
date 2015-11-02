@@ -1,0 +1,26 @@
+@import '../../../_variables';
+
+.camera.module {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.camera-popup {
+    top: 0;
+    left: 0;
+    height: $fluid-full;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: $dark;
+
+    .viewfinder {
+        height: $full;
+
+        #video {
+            width: $full;
+            height: $full;
+        }
+    }
+}

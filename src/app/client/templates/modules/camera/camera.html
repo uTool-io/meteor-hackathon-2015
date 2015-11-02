@@ -1,10 +1,14 @@
 <template name="cameraMDG">
     <div class="camera module">
-        <button class="ui primary button" id="camera-event">Camera Event</button>
-        <button class="ui secondary button" id="library-event">Library Event</button>
+        <!-- @TODO: Move to footer -->
+        <div class="ui two bottom fixed attached big buttons">
+            <button class="ui primary button" id="camera-event">Camera Event</button>
+            <button class="ui secondary button" id="library-event">Library Event</button>
+        </div>
         {{#if image}}
             <div class="photo preview">
                 <img class="ui centered fluid image" src="{{image}}">
+
                 <div class="ui buttons">
                     <button class="ui retake photo button">Retake Photo</button>
                     <div class="or"></div>
