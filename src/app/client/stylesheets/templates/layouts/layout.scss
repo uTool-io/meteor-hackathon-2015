@@ -2,27 +2,28 @@
 
 html {
 
-  body {
+    body {
+        height: auto;
 
-    .layout {
+        .layout {
 
-      header.header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: $full;
-        z-index: 10;
-      }
+            header.header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: $full;
+                z-index: 10;
+            }
 
-      main.main {
-        position: relative;
-      }
+            main.main {
+                position: relative;
+            }
 
-      footer.footer {
-        position: fixed;
-        bottom: 0;
-        width: $full;
-      }
+            footer.footer {
+                position: fixed;
+                bottom: 0;
+                width: $full;
+            }
+        }
     }
-  }
 }
