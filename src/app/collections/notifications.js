@@ -21,8 +21,18 @@ createCommentNotification = function(comment) {
             commenterId: offer.offeredItemId,
             commenterName: offer.offeredItemOwnerName,
             read: false
-        })
-        }
+        });
+    }
+    if (user != offer.offeredItemOwner) {
+        Notifications.insert({
+            receiverId: offer.offeredItemOwner,
+            receiverName: offer.offeredItemOwnerName,
+            commenterId: offer.selectedItemId,
+            commenterName: offer.selectedItemOwnerName,
+            read: false
+        });
+    }
+
     // if currentUser/senderId !== selectedItemOwner
     //   receiverId = selectedItemOwner
     // else
