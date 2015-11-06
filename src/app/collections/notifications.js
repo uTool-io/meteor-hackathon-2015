@@ -14,21 +14,43 @@ createCommentNotification = function(comment) {
     // @TODO: getReceiver() =>
 =======
 
-    // @TODO: getReceiver() =>
-
     var now = new Date(),
         user = Meteor.user(),
         offer = Offers.findOne(offer.offerId);
 
+<<<<<<< HEAD
     if (currentUser !== selectedItemOwner) {
         receiverId =
         }
 >>>>>>> 6f8b215afaeda301591b0e2824d8fb56dea9c39d
+=======
+    if (user !== offer.selectedItemOwner) {
+
+        Notifications.insert({
+            receiverId: offer.selectedItemOwner,
+            receiverName: offer.selectedItemOwnerName,
+            commenterId: offer.offeredItemId,
+            commenterName: offer.offeredItemOwnerName,
+            read: false
+        });
+    }
+    if (user != offer.offeredItemOwner) {
+        Notifications.insert({
+            receiverId: offer.offeredItemOwner,
+            receiverName: offer.offeredItemOwnerName,
+            commenterId: offer.selectedItemId,
+            commenterName: offer.selectedItemOwnerName,
+            read: false
+        });
+    }
+
+>>>>>>> notifications
     // if currentUser/senderId !== selectedItemOwner
     //   receiverId = selectedItemOwner
     // else
     //   if currentUser/senderId !== offeredItemOwner
     //      receiverId = offeredItemOwner
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     if (comment.senderId !== offer.selectedItemOwner || comment.senderId !== offer.selectedItemOwner) {
@@ -51,4 +73,6 @@ createCommentNotification = function(comment) {
         read: false
     });
     }
+=======
+>>>>>>> notifications
 };
