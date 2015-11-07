@@ -14,6 +14,7 @@ Template.commentForm.events({
                return console.error(error.reason);
            } else {
                $comment.val('');
+
            }
         });
     }

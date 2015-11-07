@@ -8,8 +8,8 @@ Notifications.allow({
 });
 
 createCommentNotification = function(comment) {
+    console.log("invocation worked");
     var offer = Comments.findOne(offer.offerId);
-
 
     var now = new Date(),
         user = Meteor.user(),
