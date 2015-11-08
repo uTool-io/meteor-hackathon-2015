@@ -16,8 +16,10 @@ Template.cameraMDG.onCreated(function () {
 });
 
 Template.cameraMDG.onRendered(function () {
+
     Session.set('cameraSnap', null);
 
+    // @TODO: wrap inside a session and set false when going to other routes
     getPicture({
         width: 350,
         height: 350,
