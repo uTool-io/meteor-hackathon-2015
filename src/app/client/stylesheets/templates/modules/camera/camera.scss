@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+.camera-overlay {
+    display: none;
+}
+
 .camera-popup {
     top: 0;
     left: 0;
@@ -15,6 +19,7 @@
     padding: 0;
     border-radius: 0;
     background-color: $dark;
+    z-index: 1;
 
     .viewfinder {
         height: $full;
@@ -24,9 +29,9 @@
             height: $full;
         }
 
-        div {
+        .camera-actions {
             position: fixed;
-            bottom: 0;
+            bottom: $space-massive;
             width: $full;
             padding: $space-base;
         }

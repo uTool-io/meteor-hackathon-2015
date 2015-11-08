@@ -17,6 +17,12 @@ Template.cameraMDG.onCreated(function () {
 
 Template.cameraMDG.onRendered(function () {
     Session.set('cameraSnap', null);
+
+    getPicture({
+        width: 350,
+        height: 350,
+        quality: 75
+    });
 });
 
 Template.cameraMDG.events({
