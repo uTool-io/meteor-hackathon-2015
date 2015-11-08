@@ -6,6 +6,7 @@ Notifications.allow({
                 fieldNames.length == 1 && fieldNames[0] == 'read';
     }
 });
+<<<<<<< HEAD
 
 createCommentNotification = function(comment) {
     console.log("invocation worked");
@@ -35,3 +36,5 @@ createCommentNotification = function(comment) {
         });
     }
 };
+=======
+>>>>>>> notifications
