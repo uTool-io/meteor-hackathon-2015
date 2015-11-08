@@ -14,15 +14,14 @@ Template.commentForm.events({
                return console.error(error.reason);
            } else {
                $comment.val('');
+               Meteor.call('createCommentNotification', commentAttributes, function(error) {
+                   if (error) {
+                       return console.error(error.reason);
+                   } else {
+                       console.log('Yo son!');
+                   }
+               });
            }
-        });
-
-        Meteor.call('createCommentNotification', commentAttributes, function(error) {
-            if (error) {
-                return console.error(error.reason);
-            } else {
-                console.log('Yo son!');
-            }
         });
     }
 });
