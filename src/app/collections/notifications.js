@@ -6,10 +6,11 @@ Notifications.allow({
                 fieldNames.length == 1 && fieldNames[0] == 'read';
     }
 });
+<<<<<<< HEAD
 
 createCommentNotification = function(comment) {
+    console.log("invocation worked");
     var offer = Comments.findOne(offer.offerId);
-
 
     var now = new Date(),
         user = Meteor.user(),
@@ -35,3 +36,5 @@ createCommentNotification = function(comment) {
         });
     }
 };
+=======
+>>>>>>> notifications

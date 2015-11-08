@@ -24,6 +24,8 @@ Meteor.methods({
                 createdAt: now
             });
 
+
+
             var commentId = Comments.insert(comment);
 
             return commentId;
