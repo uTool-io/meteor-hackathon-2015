@@ -16,5 +16,13 @@ Template.commentForm.events({
                $comment.val('');
            }
         });
+
+        Meteor.call('createCommentNotification', commentAttributes, function(error) {
+            if (error) {
+                return console.error(error.reason);
+            } else {
+                console.log('Yo son!');
+            }
+        });
     }
 });
