@@ -14,9 +14,6 @@ Template.commentForm.events({
                return console.error(error.reason);
            } else {
                $comment.val('');
-<<<<<<< HEAD
-
-=======
                Meteor.call('createCommentNotification', commentAttributes, function(error) {
                    if (error) {
                        return console.error(error.reason);
@@ -24,7 +21,6 @@ Template.commentForm.events({
                        console.log('Yo son!');
                    }
                });
->>>>>>> notifications
            }
         });
     }
