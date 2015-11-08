@@ -1,8 +1,4 @@
 <template name="camera">
-    <div class="camera-overlay">
-        {{! used to make the background dark}}
-    </div>
-
     <div class="camera-popup {{#if permissionDeniedError}}camera-popup-wide{{/if}}">
         {{#if error}}
             {{#if permissionDeniedError}}
