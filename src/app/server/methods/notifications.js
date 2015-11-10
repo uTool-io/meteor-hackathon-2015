@@ -6,12 +6,15 @@ Meteor.methods({
         var createdAt = new Date(),
             user = Meteor.user(),
             offer = Offers.findOne(commentAttributes.offerId);
-            comment = Comments.findOne();
+            //offerId = FlowRouter.getParam('offerId');
+            comment = Comments.findOne(offerId);
         //console.log(user);
         //console.log(comment.senderId);
         console.log(offer);
+        console.log(offer.offerId);
         console.log(offer.selectedItemOwner);
         console.log(offer.offeredItemOwner);
+        console.log("the sender's ID is" + comment.senderId);
 
         /*
         If the current user is the sender,
@@ -25,8 +28,6 @@ Meteor.methods({
 
         selectedItemOwner = Person who selected item
         offeredItemOwner = Person who offered the item
-
-
 
         */
         if (senderId !== offer.selectedItemOwner) {
