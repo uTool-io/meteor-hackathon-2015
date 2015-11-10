@@ -10,10 +10,12 @@ Template.commentForm.events({
             };
 
         Meteor.call('postComment', commentAttributes, function(error) {
-           if (error) {
+           if (error, commentId) {
                return console.error(error.reason);
            } else {
                $comment.val('');
+               //TODO:Grab commentId
+               console.log(commentId);
                Meteor.call('createCommentNotification', commentAttributes, function(error) {
                    if (error) {
                        return console.error(error.reason);
